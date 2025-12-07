@@ -4,7 +4,6 @@ package cloudinfragen.impl;
 
 import cloudinfragen.CloudinfragenPackage;
 import cloudinfragen.ComputeInstance;
-import cloudinfragen.NetworkInterface;
 import cloudinfragen.SecurityGroup;
 import cloudinfragen.Volume;
 
@@ -20,7 +19,8 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -33,16 +33,89 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link cloudinfragen.impl.ComputeInstanceImpl#getId <em>Id</em>}</li>
+ *   <li>{@link cloudinfragen.impl.ComputeInstanceImpl#getName <em>Name</em>}</li>
+ *   <li>{@link cloudinfragen.impl.ComputeInstanceImpl#getRegion <em>Region</em>}</li>
+ *   <li>{@link cloudinfragen.impl.ComputeInstanceImpl#getTags <em>Tags</em>}</li>
  *   <li>{@link cloudinfragen.impl.ComputeInstanceImpl#getOs <em>Os</em>}</li>
  *   <li>{@link cloudinfragen.impl.ComputeInstanceImpl#getKeypair <em>Keypair</em>}</li>
- *   <li>{@link cloudinfragen.impl.ComputeInstanceImpl#getNetworkInterfaces <em>Network Interfaces</em>}</li>
  *   <li>{@link cloudinfragen.impl.ComputeInstanceImpl#getVolumes <em>Volumes</em>}</li>
  *   <li>{@link cloudinfragen.impl.ComputeInstanceImpl#getSecurityGroups <em>Security Groups</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ComputeInstanceImpl extends CloudResourceImpl implements ComputeInstance {
+public class ComputeInstanceImpl extends MinimalEObjectImpl.Container implements ComputeInstance {
+	/**
+	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getId()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String ID_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getId()
+	 * @generated
+	 * @ordered
+	 */
+	protected String id = ID_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String NAME_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String name = NAME_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getRegion() <em>Region</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRegion()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String REGION_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getRegion() <em>Region</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRegion()
+	 * @generated
+	 * @ordered
+	 */
+	protected String region = REGION_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getTags() <em>Tags</em>}' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTags()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<String> tags;
+
 	/**
 	 * The default value of the '{@link #getOs() <em>Os</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -84,16 +157,6 @@ public class ComputeInstanceImpl extends CloudResourceImpl implements ComputeIns
 	protected String keypair = KEYPAIR_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getNetworkInterfaces() <em>Network Interfaces</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getNetworkInterfaces()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<NetworkInterface> networkInterfaces;
-
-	/**
 	 * The cached value of the '{@link #getVolumes() <em>Volumes</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -130,6 +193,88 @@ public class ComputeInstanceImpl extends CloudResourceImpl implements ComputeIns
 	@Override
 	protected EClass eStaticClass() {
 		return CloudinfragenPackage.Literals.COMPUTE_INSTANCE;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getId() {
+		return id;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setId(String newId) {
+		String oldId = id;
+		id = newId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CloudinfragenPackage.COMPUTE_INSTANCE__ID, oldId, id));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getName() {
+		return name;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setName(String newName) {
+		String oldName = name;
+		name = newName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CloudinfragenPackage.COMPUTE_INSTANCE__NAME, oldName, name));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getRegion() {
+		return region;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setRegion(String newRegion) {
+		String oldRegion = region;
+		region = newRegion;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CloudinfragenPackage.COMPUTE_INSTANCE__REGION, oldRegion, region));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<String> getTags() {
+		if (tags == null) {
+			tags = new EDataTypeUniqueEList<String>(String.class, this, CloudinfragenPackage.COMPUTE_INSTANCE__TAGS);
+		}
+		return tags;
 	}
 
 	/**
@@ -184,19 +329,6 @@ public class ComputeInstanceImpl extends CloudResourceImpl implements ComputeIns
 	 * @generated
 	 */
 	@Override
-	public EList<NetworkInterface> getNetworkInterfaces() {
-		if (networkInterfaces == null) {
-			networkInterfaces = new EObjectContainmentEList<NetworkInterface>(NetworkInterface.class, this, CloudinfragenPackage.COMPUTE_INSTANCE__NETWORK_INTERFACES);
-		}
-		return networkInterfaces;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EList<Volume> getVolumes() {
 		if (volumes == null) {
 			volumes = new EObjectWithInverseResolvingEList<Volume>(Volume.class, this, CloudinfragenPackage.COMPUTE_INSTANCE__VOLUMES, CloudinfragenPackage.VOLUME__ATTACHED_TO);
@@ -240,8 +372,6 @@ public class ComputeInstanceImpl extends CloudResourceImpl implements ComputeIns
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case CloudinfragenPackage.COMPUTE_INSTANCE__NETWORK_INTERFACES:
-				return ((InternalEList<?>)getNetworkInterfaces()).basicRemove(otherEnd, msgs);
 			case CloudinfragenPackage.COMPUTE_INSTANCE__VOLUMES:
 				return ((InternalEList<?>)getVolumes()).basicRemove(otherEnd, msgs);
 		}
@@ -256,12 +386,18 @@ public class ComputeInstanceImpl extends CloudResourceImpl implements ComputeIns
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case CloudinfragenPackage.COMPUTE_INSTANCE__ID:
+				return getId();
+			case CloudinfragenPackage.COMPUTE_INSTANCE__NAME:
+				return getName();
+			case CloudinfragenPackage.COMPUTE_INSTANCE__REGION:
+				return getRegion();
+			case CloudinfragenPackage.COMPUTE_INSTANCE__TAGS:
+				return getTags();
 			case CloudinfragenPackage.COMPUTE_INSTANCE__OS:
 				return getOs();
 			case CloudinfragenPackage.COMPUTE_INSTANCE__KEYPAIR:
 				return getKeypair();
-			case CloudinfragenPackage.COMPUTE_INSTANCE__NETWORK_INTERFACES:
-				return getNetworkInterfaces();
 			case CloudinfragenPackage.COMPUTE_INSTANCE__VOLUMES:
 				return getVolumes();
 			case CloudinfragenPackage.COMPUTE_INSTANCE__SECURITY_GROUPS:
@@ -279,15 +415,24 @@ public class ComputeInstanceImpl extends CloudResourceImpl implements ComputeIns
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case CloudinfragenPackage.COMPUTE_INSTANCE__ID:
+				setId((String)newValue);
+				return;
+			case CloudinfragenPackage.COMPUTE_INSTANCE__NAME:
+				setName((String)newValue);
+				return;
+			case CloudinfragenPackage.COMPUTE_INSTANCE__REGION:
+				setRegion((String)newValue);
+				return;
+			case CloudinfragenPackage.COMPUTE_INSTANCE__TAGS:
+				getTags().clear();
+				getTags().addAll((Collection<? extends String>)newValue);
+				return;
 			case CloudinfragenPackage.COMPUTE_INSTANCE__OS:
 				setOs((String)newValue);
 				return;
 			case CloudinfragenPackage.COMPUTE_INSTANCE__KEYPAIR:
 				setKeypair((String)newValue);
-				return;
-			case CloudinfragenPackage.COMPUTE_INSTANCE__NETWORK_INTERFACES:
-				getNetworkInterfaces().clear();
-				getNetworkInterfaces().addAll((Collection<? extends NetworkInterface>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -301,14 +446,23 @@ public class ComputeInstanceImpl extends CloudResourceImpl implements ComputeIns
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case CloudinfragenPackage.COMPUTE_INSTANCE__ID:
+				setId(ID_EDEFAULT);
+				return;
+			case CloudinfragenPackage.COMPUTE_INSTANCE__NAME:
+				setName(NAME_EDEFAULT);
+				return;
+			case CloudinfragenPackage.COMPUTE_INSTANCE__REGION:
+				setRegion(REGION_EDEFAULT);
+				return;
+			case CloudinfragenPackage.COMPUTE_INSTANCE__TAGS:
+				getTags().clear();
+				return;
 			case CloudinfragenPackage.COMPUTE_INSTANCE__OS:
 				setOs(OS_EDEFAULT);
 				return;
 			case CloudinfragenPackage.COMPUTE_INSTANCE__KEYPAIR:
 				setKeypair(KEYPAIR_EDEFAULT);
-				return;
-			case CloudinfragenPackage.COMPUTE_INSTANCE__NETWORK_INTERFACES:
-				getNetworkInterfaces().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -322,12 +476,18 @@ public class ComputeInstanceImpl extends CloudResourceImpl implements ComputeIns
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case CloudinfragenPackage.COMPUTE_INSTANCE__ID:
+				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
+			case CloudinfragenPackage.COMPUTE_INSTANCE__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case CloudinfragenPackage.COMPUTE_INSTANCE__REGION:
+				return REGION_EDEFAULT == null ? region != null : !REGION_EDEFAULT.equals(region);
+			case CloudinfragenPackage.COMPUTE_INSTANCE__TAGS:
+				return tags != null && !tags.isEmpty();
 			case CloudinfragenPackage.COMPUTE_INSTANCE__OS:
 				return OS_EDEFAULT == null ? os != null : !OS_EDEFAULT.equals(os);
 			case CloudinfragenPackage.COMPUTE_INSTANCE__KEYPAIR:
 				return KEYPAIR_EDEFAULT == null ? keypair != null : !KEYPAIR_EDEFAULT.equals(keypair);
-			case CloudinfragenPackage.COMPUTE_INSTANCE__NETWORK_INTERFACES:
-				return networkInterfaces != null && !networkInterfaces.isEmpty();
 			case CloudinfragenPackage.COMPUTE_INSTANCE__VOLUMES:
 				return volumes != null && !volumes.isEmpty();
 			case CloudinfragenPackage.COMPUTE_INSTANCE__SECURITY_GROUPS:
@@ -346,7 +506,15 @@ public class ComputeInstanceImpl extends CloudResourceImpl implements ComputeIns
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (os: ");
+		result.append(" (id: ");
+		result.append(id);
+		result.append(", name: ");
+		result.append(name);
+		result.append(", region: ");
+		result.append(region);
+		result.append(", tags: ");
+		result.append(tags);
+		result.append(", os: ");
 		result.append(os);
 		result.append(", keypair: ");
 		result.append(keypair);

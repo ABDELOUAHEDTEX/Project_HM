@@ -103,15 +103,6 @@ public interface CloudinfragenFactory extends EFactory {
 	RouteTable createRouteTable();
 
 	/**
-	 * Returns a new object of class '<em>Network Interface</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Network Interface</em>'.
-	 * @generated
-	 */
-	NetworkInterface createNetworkInterface();
-
-	/**
 	 * Returns a new object of class '<em>Security Group</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -130,76 +121,13 @@ public interface CloudinfragenFactory extends EFactory {
 	LoadBalancer createLoadBalancer();
 
 	/**
-	 * Returns a new object of class '<em>Database Instance</em>'.
+	 * Returns a new object of class '<em>IAM Entity</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Database Instance</em>'.
+	 * @return a new object of class '<em>IAM Entity</em>'.
 	 * @generated
 	 */
-	DatabaseInstance createDatabaseInstance();
-
-	/**
-	 * Returns a new object of class '<em>No SQL Database</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>No SQL Database</em>'.
-	 * @generated
-	 */
-	NoSQLDatabase createNoSQLDatabase();
-
-	/**
-	 * Returns a new object of class '<em>Function</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Function</em>'.
-	 * @generated
-	 */
-	Function createFunction();
-
-	/**
-	 * Returns a new object of class '<em>Container Service</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Container Service</em>'.
-	 * @generated
-	 */
-	ContainerService createContainerService();
-
-	/**
-	 * Returns a new object of class '<em>IAM Role</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>IAM Role</em>'.
-	 * @generated
-	 */
-	IAMRole createIAMRole();
-
-	/**
-	 * Returns a new object of class '<em>IAM Policy</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>IAM Policy</em>'.
-	 * @generated
-	 */
-	IAMPolicy createIAMPolicy();
-
-	/**
-	 * Returns a new object of class '<em>Config Parameter</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Config Parameter</em>'.
-	 * @generated
-	 */
-	ConfigParameter createConfigParameter();
-
-	/**
-	 * Returns a new object of class '<em>Secret</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Secret</em>'.
-	 * @generated
-	 */
-	Secret createSecret();
+	IAMEntity createIAMEntity();
 
 	/**
 	 * Returns a new object of class '<em>Monitoring Service</em>'.

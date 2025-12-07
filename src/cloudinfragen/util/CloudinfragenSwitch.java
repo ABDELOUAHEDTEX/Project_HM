@@ -134,13 +134,6 @@ public class CloudinfragenSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case CloudinfragenPackage.NETWORK_INTERFACE: {
-				NetworkInterface networkInterface = (NetworkInterface)theEObject;
-				T result = caseNetworkInterface(networkInterface);
-				if (result == null) result = caseCloudResource(networkInterface);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case CloudinfragenPackage.SECURITY_GROUP: {
 				SecurityGroup securityGroup = (SecurityGroup)theEObject;
 				T result = caseSecurityGroup(securityGroup);
@@ -155,59 +148,10 @@ public class CloudinfragenSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case CloudinfragenPackage.DATABASE_INSTANCE: {
-				DatabaseInstance databaseInstance = (DatabaseInstance)theEObject;
-				T result = caseDatabaseInstance(databaseInstance);
-				if (result == null) result = caseCloudResource(databaseInstance);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case CloudinfragenPackage.NO_SQL_DATABASE: {
-				NoSQLDatabase noSQLDatabase = (NoSQLDatabase)theEObject;
-				T result = caseNoSQLDatabase(noSQLDatabase);
-				if (result == null) result = caseCloudResource(noSQLDatabase);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case CloudinfragenPackage.FUNCTION: {
-				Function function = (Function)theEObject;
-				T result = caseFunction(function);
-				if (result == null) result = caseCloudResource(function);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case CloudinfragenPackage.CONTAINER_SERVICE: {
-				ContainerService containerService = (ContainerService)theEObject;
-				T result = caseContainerService(containerService);
-				if (result == null) result = caseCloudResource(containerService);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case CloudinfragenPackage.IAM_ROLE: {
-				IAMRole iamRole = (IAMRole)theEObject;
-				T result = caseIAMRole(iamRole);
-				if (result == null) result = caseCloudResource(iamRole);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case CloudinfragenPackage.IAM_POLICY: {
-				IAMPolicy iamPolicy = (IAMPolicy)theEObject;
-				T result = caseIAMPolicy(iamPolicy);
-				if (result == null) result = caseCloudResource(iamPolicy);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case CloudinfragenPackage.CONFIG_PARAMETER: {
-				ConfigParameter configParameter = (ConfigParameter)theEObject;
-				T result = caseConfigParameter(configParameter);
-				if (result == null) result = caseCloudResource(configParameter);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case CloudinfragenPackage.SECRET: {
-				Secret secret = (Secret)theEObject;
-				T result = caseSecret(secret);
-				if (result == null) result = caseCloudResource(secret);
+			case CloudinfragenPackage.IAM_ENTITY: {
+				IAMEntity iamEntity = (IAMEntity)theEObject;
+				T result = caseIAMEntity(iamEntity);
+				if (result == null) result = caseCloudResource(iamEntity);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -373,21 +317,6 @@ public class CloudinfragenSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Network Interface</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Network Interface</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseNetworkInterface(NetworkInterface object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Security Group</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -418,122 +347,17 @@ public class CloudinfragenSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Database Instance</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>IAM Entity</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Database Instance</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>IAM Entity</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseDatabaseInstance(DatabaseInstance object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>No SQL Database</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>No SQL Database</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseNoSQLDatabase(NoSQLDatabase object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Function</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Function</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseFunction(Function object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Container Service</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Container Service</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseContainerService(ContainerService object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>IAM Role</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>IAM Role</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseIAMRole(IAMRole object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>IAM Policy</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>IAM Policy</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseIAMPolicy(IAMPolicy object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Config Parameter</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Config Parameter</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseConfigParameter(ConfigParameter object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Secret</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Secret</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseSecret(Secret object) {
+	public T caseIAMEntity(IAMEntity object) {
 		return null;
 	}
 

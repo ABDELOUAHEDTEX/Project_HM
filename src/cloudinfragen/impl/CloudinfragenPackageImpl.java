@@ -7,20 +7,12 @@ import cloudinfragen.CloudResource;
 import cloudinfragen.CloudinfragenFactory;
 import cloudinfragen.CloudinfragenPackage;
 import cloudinfragen.ComputeInstance;
-import cloudinfragen.ConfigParameter;
-import cloudinfragen.ContainerService;
-import cloudinfragen.DatabaseInstance;
 import cloudinfragen.FileSystem;
-import cloudinfragen.Function;
-import cloudinfragen.IAMPolicy;
-import cloudinfragen.IAMRole;
+import cloudinfragen.IAMEntity;
 import cloudinfragen.Infrastructure;
 import cloudinfragen.LoadBalancer;
 import cloudinfragen.MonitoringService;
-import cloudinfragen.NetworkInterface;
-import cloudinfragen.NoSQLDatabase;
 import cloudinfragen.RouteTable;
-import cloudinfragen.Secret;
 import cloudinfragen.SecurityGroup;
 import cloudinfragen.StorageBucket;
 import cloudinfragen.Subnet;
@@ -28,6 +20,7 @@ import cloudinfragen.Volume;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -115,13 +108,6 @@ public class CloudinfragenPackageImpl extends EPackageImpl implements Cloudinfra
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass networkInterfaceEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	private EClass securityGroupEClass = null;
 
 	/**
@@ -136,56 +122,7 @@ public class CloudinfragenPackageImpl extends EPackageImpl implements Cloudinfra
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass databaseInstanceEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass noSQLDatabaseEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass functionEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass containerServiceEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass iamRoleEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass iamPolicyEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass configParameterEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass secretEClass = null;
+	private EClass iamEntityEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -360,7 +297,7 @@ public class CloudinfragenPackageImpl extends EPackageImpl implements Cloudinfra
 	 * @generated
 	 */
 	@Override
-	public EReference getComputeInstance_NetworkInterfaces() {
+	public EReference getComputeInstance_Volumes() {
 		return (EReference)computeInstanceEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -370,18 +307,8 @@ public class CloudinfragenPackageImpl extends EPackageImpl implements Cloudinfra
 	 * @generated
 	 */
 	@Override
-	public EReference getComputeInstance_Volumes() {
-		return (EReference)computeInstanceEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EReference getComputeInstance_SecurityGroups() {
-		return (EReference)computeInstanceEClass.getEStructuralFeatures().get(4);
+		return (EReference)computeInstanceEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -670,56 +597,6 @@ public class CloudinfragenPackageImpl extends EPackageImpl implements Cloudinfra
 	 * @generated
 	 */
 	@Override
-	public EClass getNetworkInterface() {
-		return networkInterfaceEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getNetworkInterface_PrivateIP() {
-		return (EAttribute)networkInterfaceEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getNetworkInterface_PublicIP() {
-		return (EAttribute)networkInterfaceEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getNetworkInterface_Subnet() {
-		return (EReference)networkInterfaceEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getNetworkInterface_SecurityGroups() {
-		return (EReference)networkInterfaceEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EClass getSecurityGroup() {
 		return securityGroupEClass;
 	}
@@ -800,8 +677,8 @@ public class CloudinfragenPackageImpl extends EPackageImpl implements Cloudinfra
 	 * @generated
 	 */
 	@Override
-	public EClass getDatabaseInstance() {
-		return databaseInstanceEClass;
+	public EClass getIAMEntity() {
+		return iamEntityEClass;
 	}
 
 	/**
@@ -810,8 +687,8 @@ public class CloudinfragenPackageImpl extends EPackageImpl implements Cloudinfra
 	 * @generated
 	 */
 	@Override
-	public EAttribute getDatabaseInstance_Engine() {
-		return (EAttribute)databaseInstanceEClass.getEStructuralFeatures().get(0);
+	public EAttribute getIAMEntity_EntityType() {
+		return (EAttribute)iamEntityEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -820,8 +697,8 @@ public class CloudinfragenPackageImpl extends EPackageImpl implements Cloudinfra
 	 * @generated
 	 */
 	@Override
-	public EAttribute getDatabaseInstance_Version() {
-		return (EAttribute)databaseInstanceEClass.getEStructuralFeatures().get(1);
+	public EAttribute getIAMEntity_Actions() {
+		return (EAttribute)iamEntityEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -830,8 +707,8 @@ public class CloudinfragenPackageImpl extends EPackageImpl implements Cloudinfra
 	 * @generated
 	 */
 	@Override
-	public EAttribute getDatabaseInstance_StorageSize() {
-		return (EAttribute)databaseInstanceEClass.getEStructuralFeatures().get(2);
+	public EAttribute getIAMEntity_Resources() {
+		return (EAttribute)iamEntityEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -840,298 +717,8 @@ public class CloudinfragenPackageImpl extends EPackageImpl implements Cloudinfra
 	 * @generated
 	 */
 	@Override
-	public EAttribute getDatabaseInstance_MultiAZ() {
-		return (EAttribute)databaseInstanceEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getDatabaseInstance_Subnet() {
-		return (EReference)databaseInstanceEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getDatabaseInstance_SecurityGroups() {
-		return (EReference)databaseInstanceEClass.getEStructuralFeatures().get(5);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getNoSQLDatabase() {
-		return noSQLDatabaseEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getNoSQLDatabase_Engine() {
-		return (EAttribute)noSQLDatabaseEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getNoSQLDatabase_ThroughputCapacity() {
-		return (EAttribute)noSQLDatabaseEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getNoSQLDatabase_ReplicaCount() {
-		return (EAttribute)noSQLDatabaseEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getFunction() {
-		return functionEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getFunction_Runtime() {
-		return (EAttribute)functionEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getFunction_Trigger() {
-		return (EAttribute)functionEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getFunction_IamRole() {
-		return (EReference)functionEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getContainerService() {
-		return containerServiceEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getContainerService_ClusterName() {
-		return (EAttribute)containerServiceEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getContainerService_NumberOfContainers() {
-		return (EAttribute)containerServiceEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getContainerService_Image() {
-		return (EAttribute)containerServiceEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getContainerService_Subnets() {
-		return (EReference)containerServiceEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getContainerService_SecurityGroups() {
-		return (EReference)containerServiceEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getIAMRole() {
-		return iamRoleEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getIAMRole_AssumeRolePolicy() {
-		return (EAttribute)iamRoleEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getIAMRole_Policies() {
-		return (EReference)iamRoleEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getIAMPolicy() {
-		return iamPolicyEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getIAMPolicy_Actions() {
-		return (EAttribute)iamPolicyEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getIAMPolicy_Resources() {
-		return (EAttribute)iamPolicyEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getConfigParameter() {
-		return configParameterEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getConfigParameter_Key() {
-		return (EAttribute)configParameterEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getConfigParameter_Value() {
-		return (EAttribute)configParameterEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getConfigParameter_Type() {
-		return (EAttribute)configParameterEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getSecret() {
-		return secretEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getSecret_Key() {
-		return (EAttribute)secretEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getSecret_Encrypted() {
-		return (EAttribute)secretEClass.getEStructuralFeatures().get(1);
+	public EAttribute getIAMEntity_AssumeRolePolicy() {
+		return (EAttribute)iamEntityEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -1180,6 +767,26 @@ public class CloudinfragenPackageImpl extends EPackageImpl implements Cloudinfra
 	 * @generated
 	 */
 	@Override
+	public EOperation getMonitoringService__NewOperation1() {
+		return monitoringServiceEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getMonitoringService__NewOperation2() {
+		return monitoringServiceEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public CloudinfragenFactory getCloudinfragenFactory() {
 		return (CloudinfragenFactory)getEFactoryInstance();
 	}
@@ -1215,7 +822,6 @@ public class CloudinfragenPackageImpl extends EPackageImpl implements Cloudinfra
 		computeInstanceEClass = createEClass(COMPUTE_INSTANCE);
 		createEAttribute(computeInstanceEClass, COMPUTE_INSTANCE__OS);
 		createEAttribute(computeInstanceEClass, COMPUTE_INSTANCE__KEYPAIR);
-		createEReference(computeInstanceEClass, COMPUTE_INSTANCE__NETWORK_INTERFACES);
 		createEReference(computeInstanceEClass, COMPUTE_INSTANCE__VOLUMES);
 		createEReference(computeInstanceEClass, COMPUTE_INSTANCE__SECURITY_GROUPS);
 
@@ -1254,12 +860,6 @@ public class CloudinfragenPackageImpl extends EPackageImpl implements Cloudinfra
 		createEAttribute(routeTableEClass, ROUTE_TABLE__ROUTES);
 		createEReference(routeTableEClass, ROUTE_TABLE__SUBNETS);
 
-		networkInterfaceEClass = createEClass(NETWORK_INTERFACE);
-		createEAttribute(networkInterfaceEClass, NETWORK_INTERFACE__PRIVATE_IP);
-		createEAttribute(networkInterfaceEClass, NETWORK_INTERFACE__PUBLIC_IP);
-		createEReference(networkInterfaceEClass, NETWORK_INTERFACE__SUBNET);
-		createEReference(networkInterfaceEClass, NETWORK_INTERFACE__SECURITY_GROUPS);
-
 		securityGroupEClass = createEClass(SECURITY_GROUP);
 		createEAttribute(securityGroupEClass, SECURITY_GROUP__INBOUND_RULES);
 		createEAttribute(securityGroupEClass, SECURITY_GROUP__OUTBOUND_RULES);
@@ -1270,52 +870,18 @@ public class CloudinfragenPackageImpl extends EPackageImpl implements Cloudinfra
 		createEReference(loadBalancerEClass, LOAD_BALANCER__INSTANCES);
 		createEReference(loadBalancerEClass, LOAD_BALANCER__SUBNETS);
 
-		databaseInstanceEClass = createEClass(DATABASE_INSTANCE);
-		createEAttribute(databaseInstanceEClass, DATABASE_INSTANCE__ENGINE);
-		createEAttribute(databaseInstanceEClass, DATABASE_INSTANCE__VERSION);
-		createEAttribute(databaseInstanceEClass, DATABASE_INSTANCE__STORAGE_SIZE);
-		createEAttribute(databaseInstanceEClass, DATABASE_INSTANCE__MULTI_AZ);
-		createEReference(databaseInstanceEClass, DATABASE_INSTANCE__SUBNET);
-		createEReference(databaseInstanceEClass, DATABASE_INSTANCE__SECURITY_GROUPS);
-
-		noSQLDatabaseEClass = createEClass(NO_SQL_DATABASE);
-		createEAttribute(noSQLDatabaseEClass, NO_SQL_DATABASE__ENGINE);
-		createEAttribute(noSQLDatabaseEClass, NO_SQL_DATABASE__THROUGHPUT_CAPACITY);
-		createEAttribute(noSQLDatabaseEClass, NO_SQL_DATABASE__REPLICA_COUNT);
-
-		functionEClass = createEClass(FUNCTION);
-		createEAttribute(functionEClass, FUNCTION__RUNTIME);
-		createEAttribute(functionEClass, FUNCTION__TRIGGER);
-		createEReference(functionEClass, FUNCTION__IAM_ROLE);
-
-		containerServiceEClass = createEClass(CONTAINER_SERVICE);
-		createEAttribute(containerServiceEClass, CONTAINER_SERVICE__CLUSTER_NAME);
-		createEAttribute(containerServiceEClass, CONTAINER_SERVICE__NUMBER_OF_CONTAINERS);
-		createEAttribute(containerServiceEClass, CONTAINER_SERVICE__IMAGE);
-		createEReference(containerServiceEClass, CONTAINER_SERVICE__SUBNETS);
-		createEReference(containerServiceEClass, CONTAINER_SERVICE__SECURITY_GROUPS);
-
-		iamRoleEClass = createEClass(IAM_ROLE);
-		createEAttribute(iamRoleEClass, IAM_ROLE__ASSUME_ROLE_POLICY);
-		createEReference(iamRoleEClass, IAM_ROLE__POLICIES);
-
-		iamPolicyEClass = createEClass(IAM_POLICY);
-		createEAttribute(iamPolicyEClass, IAM_POLICY__ACTIONS);
-		createEAttribute(iamPolicyEClass, IAM_POLICY__RESOURCES);
-
-		configParameterEClass = createEClass(CONFIG_PARAMETER);
-		createEAttribute(configParameterEClass, CONFIG_PARAMETER__KEY);
-		createEAttribute(configParameterEClass, CONFIG_PARAMETER__VALUE);
-		createEAttribute(configParameterEClass, CONFIG_PARAMETER__TYPE);
-
-		secretEClass = createEClass(SECRET);
-		createEAttribute(secretEClass, SECRET__KEY);
-		createEAttribute(secretEClass, SECRET__ENCRYPTED);
+		iamEntityEClass = createEClass(IAM_ENTITY);
+		createEAttribute(iamEntityEClass, IAM_ENTITY__ENTITY_TYPE);
+		createEAttribute(iamEntityEClass, IAM_ENTITY__ACTIONS);
+		createEAttribute(iamEntityEClass, IAM_ENTITY__RESOURCES);
+		createEAttribute(iamEntityEClass, IAM_ENTITY__ASSUME_ROLE_POLICY);
 
 		monitoringServiceEClass = createEClass(MONITORING_SERVICE);
 		createEAttribute(monitoringServiceEClass, MONITORING_SERVICE__METRICS);
 		createEAttribute(monitoringServiceEClass, MONITORING_SERVICE__ALERTS);
 		createEReference(monitoringServiceEClass, MONITORING_SERVICE__MONITORED_RESOURCES);
+		createEOperation(monitoringServiceEClass, MONITORING_SERVICE___NEW_OPERATION1);
+		createEOperation(monitoringServiceEClass, MONITORING_SERVICE___NEW_OPERATION2);
 	}
 
 	/**
@@ -1354,24 +920,16 @@ public class CloudinfragenPackageImpl extends EPackageImpl implements Cloudinfra
 		vpcEClass.getESuperTypes().add(this.getCloudResource());
 		subnetEClass.getESuperTypes().add(this.getCloudResource());
 		routeTableEClass.getESuperTypes().add(this.getCloudResource());
-		networkInterfaceEClass.getESuperTypes().add(this.getCloudResource());
 		securityGroupEClass.getESuperTypes().add(this.getCloudResource());
 		loadBalancerEClass.getESuperTypes().add(this.getCloudResource());
-		databaseInstanceEClass.getESuperTypes().add(this.getCloudResource());
-		noSQLDatabaseEClass.getESuperTypes().add(this.getCloudResource());
-		functionEClass.getESuperTypes().add(this.getCloudResource());
-		containerServiceEClass.getESuperTypes().add(this.getCloudResource());
-		iamRoleEClass.getESuperTypes().add(this.getCloudResource());
-		iamPolicyEClass.getESuperTypes().add(this.getCloudResource());
-		configParameterEClass.getESuperTypes().add(this.getCloudResource());
-		secretEClass.getESuperTypes().add(this.getCloudResource());
+		iamEntityEClass.getESuperTypes().add(this.getCloudResource());
 		monitoringServiceEClass.getESuperTypes().add(this.getCloudResource());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(infrastructureEClass, Infrastructure.class, "Infrastructure", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getInfrastructure_Resources(), this.getCloudResource(), null, "resources", null, 0, -1, Infrastructure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
-		initEClass(cloudResourceEClass, CloudResource.class, "CloudResource", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(cloudResourceEClass, CloudResource.class, "CloudResource", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getCloudResource_Id(), ecorePackage.getEString(), "id", null, 1, 1, CloudResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getCloudResource_Name(), ecorePackage.getEString(), "name", null, 1, 1, CloudResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getCloudResource_Region(), ecorePackage.getEString(), "region", null, 0, 1, CloudResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -1380,7 +938,6 @@ public class CloudinfragenPackageImpl extends EPackageImpl implements Cloudinfra
 		initEClass(computeInstanceEClass, ComputeInstance.class, "ComputeInstance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getComputeInstance_Os(), ecorePackage.getEString(), "os", null, 0, 1, ComputeInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getComputeInstance_Keypair(), ecorePackage.getEString(), "keypair", null, 0, 1, ComputeInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getComputeInstance_NetworkInterfaces(), this.getNetworkInterface(), null, "networkInterfaces", null, 0, -1, ComputeInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getComputeInstance_Volumes(), this.getVolume(), this.getVolume_AttachedTo(), "volumes", null, 0, -1, ComputeInstance.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getComputeInstance_SecurityGroups(), this.getSecurityGroup(), null, "securityGroups", null, 0, -1, ComputeInstance.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
@@ -1419,12 +976,6 @@ public class CloudinfragenPackageImpl extends EPackageImpl implements Cloudinfra
 		initEAttribute(getRouteTable_Routes(), ecorePackage.getEString(), "routes", null, 0, -1, RouteTable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getRouteTable_Subnets(), this.getSubnet(), this.getSubnet_RouteTable(), "subnets", null, 0, -1, RouteTable.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
-		initEClass(networkInterfaceEClass, NetworkInterface.class, "NetworkInterface", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getNetworkInterface_PrivateIP(), ecorePackage.getEString(), "privateIP", null, 0, 1, NetworkInterface.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getNetworkInterface_PublicIP(), ecorePackage.getEString(), "publicIP", null, 0, 1, NetworkInterface.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getNetworkInterface_Subnet(), this.getSubnet(), null, "subnet", null, 1, 1, NetworkInterface.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getNetworkInterface_SecurityGroups(), this.getSecurityGroup(), null, "securityGroups", null, 0, -1, NetworkInterface.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-
 		initEClass(securityGroupEClass, SecurityGroup.class, "SecurityGroup", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getSecurityGroup_InboundRules(), ecorePackage.getEString(), "inboundRules", null, 0, -1, SecurityGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getSecurityGroup_OutboundRules(), ecorePackage.getEString(), "outboundRules", null, 0, -1, SecurityGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -1435,52 +986,20 @@ public class CloudinfragenPackageImpl extends EPackageImpl implements Cloudinfra
 		initEReference(getLoadBalancer_Instances(), this.getComputeInstance(), null, "instances", null, 0, -1, LoadBalancer.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getLoadBalancer_Subnets(), this.getSubnet(), null, "subnets", null, 0, -1, LoadBalancer.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
-		initEClass(databaseInstanceEClass, DatabaseInstance.class, "DatabaseInstance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getDatabaseInstance_Engine(), ecorePackage.getEString(), "engine", null, 1, 1, DatabaseInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getDatabaseInstance_Version(), ecorePackage.getEString(), "version", null, 0, 1, DatabaseInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getDatabaseInstance_StorageSize(), ecorePackage.getEInt(), "storageSize", null, 1, 1, DatabaseInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getDatabaseInstance_MultiAZ(), ecorePackage.getEBoolean(), "multiAZ", "false", 0, 1, DatabaseInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getDatabaseInstance_Subnet(), this.getSubnet(), null, "subnet", null, 0, 1, DatabaseInstance.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getDatabaseInstance_SecurityGroups(), this.getSecurityGroup(), null, "securityGroups", null, 0, -1, DatabaseInstance.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-
-		initEClass(noSQLDatabaseEClass, NoSQLDatabase.class, "NoSQLDatabase", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getNoSQLDatabase_Engine(), ecorePackage.getEString(), "engine", null, 1, 1, NoSQLDatabase.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getNoSQLDatabase_ThroughputCapacity(), ecorePackage.getEInt(), "throughputCapacity", null, 0, 1, NoSQLDatabase.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getNoSQLDatabase_ReplicaCount(), ecorePackage.getEInt(), "replicaCount", null, 0, 1, NoSQLDatabase.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-
-		initEClass(functionEClass, Function.class, "Function", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getFunction_Runtime(), ecorePackage.getEString(), "runtime", null, 1, 1, Function.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getFunction_Trigger(), ecorePackage.getEString(), "trigger", null, 0, 1, Function.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getFunction_IamRole(), this.getIAMRole(), null, "iamRole", null, 0, 1, Function.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-
-		initEClass(containerServiceEClass, ContainerService.class, "ContainerService", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getContainerService_ClusterName(), ecorePackage.getEString(), "clusterName", null, 1, 1, ContainerService.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getContainerService_NumberOfContainers(), ecorePackage.getEInt(), "numberOfContainers", "1", 1, 1, ContainerService.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getContainerService_Image(), ecorePackage.getEString(), "image", null, 1, 1, ContainerService.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getContainerService_Subnets(), this.getSubnet(), null, "subnets", null, 0, -1, ContainerService.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getContainerService_SecurityGroups(), this.getSecurityGroup(), null, "securityGroups", null, 0, -1, ContainerService.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-
-		initEClass(iamRoleEClass, IAMRole.class, "IAMRole", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getIAMRole_AssumeRolePolicy(), ecorePackage.getEString(), "assumeRolePolicy", null, 0, 1, IAMRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getIAMRole_Policies(), this.getIAMPolicy(), null, "policies", null, 0, -1, IAMRole.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-
-		initEClass(iamPolicyEClass, IAMPolicy.class, "IAMPolicy", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getIAMPolicy_Actions(), ecorePackage.getEString(), "actions", null, 0, -1, IAMPolicy.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getIAMPolicy_Resources(), ecorePackage.getEString(), "resources", null, 0, -1, IAMPolicy.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-
-		initEClass(configParameterEClass, ConfigParameter.class, "ConfigParameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getConfigParameter_Key(), ecorePackage.getEString(), "key", null, 1, 1, ConfigParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getConfigParameter_Value(), ecorePackage.getEString(), "value", null, 0, 1, ConfigParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getConfigParameter_Type(), ecorePackage.getEString(), "type", null, 0, 1, ConfigParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-
-		initEClass(secretEClass, Secret.class, "Secret", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getSecret_Key(), ecorePackage.getEString(), "key", null, 1, 1, Secret.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getSecret_Encrypted(), ecorePackage.getEBoolean(), "encrypted", "true", 0, 1, Secret.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEClass(iamEntityEClass, IAMEntity.class, "IAMEntity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getIAMEntity_EntityType(), ecorePackage.getEString(), "entityType", null, 1, 1, IAMEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getIAMEntity_Actions(), ecorePackage.getEString(), "actions", null, 0, -1, IAMEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getIAMEntity_Resources(), ecorePackage.getEString(), "resources", null, 0, -1, IAMEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getIAMEntity_AssumeRolePolicy(), ecorePackage.getEString(), "assumeRolePolicy", null, 0, 1, IAMEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(monitoringServiceEClass, MonitoringService.class, "MonitoringService", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getMonitoringService_Metrics(), ecorePackage.getEString(), "metrics", null, 0, -1, MonitoringService.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getMonitoringService_Alerts(), ecorePackage.getEString(), "alerts", null, 0, -1, MonitoringService.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getMonitoringService_MonitoredResources(), this.getCloudResource(), null, "monitoredResources", null, 0, -1, MonitoringService.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+
+		initEOperation(getMonitoringService__NewOperation1(), null, "newOperation1", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEOperation(getMonitoringService__NewOperation2(), null, "newOperation2", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

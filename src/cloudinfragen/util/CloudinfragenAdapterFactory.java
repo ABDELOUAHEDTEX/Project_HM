@@ -108,10 +108,6 @@ public class CloudinfragenAdapterFactory extends AdapterFactoryImpl {
 				return createRouteTableAdapter();
 			}
 			@Override
-			public Adapter caseNetworkInterface(NetworkInterface object) {
-				return createNetworkInterfaceAdapter();
-			}
-			@Override
 			public Adapter caseSecurityGroup(SecurityGroup object) {
 				return createSecurityGroupAdapter();
 			}
@@ -120,36 +116,8 @@ public class CloudinfragenAdapterFactory extends AdapterFactoryImpl {
 				return createLoadBalancerAdapter();
 			}
 			@Override
-			public Adapter caseDatabaseInstance(DatabaseInstance object) {
-				return createDatabaseInstanceAdapter();
-			}
-			@Override
-			public Adapter caseNoSQLDatabase(NoSQLDatabase object) {
-				return createNoSQLDatabaseAdapter();
-			}
-			@Override
-			public Adapter caseFunction(Function object) {
-				return createFunctionAdapter();
-			}
-			@Override
-			public Adapter caseContainerService(ContainerService object) {
-				return createContainerServiceAdapter();
-			}
-			@Override
-			public Adapter caseIAMRole(IAMRole object) {
-				return createIAMRoleAdapter();
-			}
-			@Override
-			public Adapter caseIAMPolicy(IAMPolicy object) {
-				return createIAMPolicyAdapter();
-			}
-			@Override
-			public Adapter caseConfigParameter(ConfigParameter object) {
-				return createConfigParameterAdapter();
-			}
-			@Override
-			public Adapter caseSecret(Secret object) {
-				return createSecretAdapter();
+			public Adapter caseIAMEntity(IAMEntity object) {
+				return createIAMEntityAdapter();
 			}
 			@Override
 			public Adapter caseMonitoringService(MonitoringService object) {
@@ -316,20 +284,6 @@ public class CloudinfragenAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link cloudinfragen.NetworkInterface <em>Network Interface</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see cloudinfragen.NetworkInterface
-	 * @generated
-	 */
-	public Adapter createNetworkInterfaceAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link cloudinfragen.SecurityGroup <em>Security Group</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -358,114 +312,16 @@ public class CloudinfragenAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link cloudinfragen.DatabaseInstance <em>Database Instance</em>}'.
+	 * Creates a new adapter for an object of class '{@link cloudinfragen.IAMEntity <em>IAM Entity</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see cloudinfragen.DatabaseInstance
+	 * @see cloudinfragen.IAMEntity
 	 * @generated
 	 */
-	public Adapter createDatabaseInstanceAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link cloudinfragen.NoSQLDatabase <em>No SQL Database</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see cloudinfragen.NoSQLDatabase
-	 * @generated
-	 */
-	public Adapter createNoSQLDatabaseAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link cloudinfragen.Function <em>Function</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see cloudinfragen.Function
-	 * @generated
-	 */
-	public Adapter createFunctionAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link cloudinfragen.ContainerService <em>Container Service</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see cloudinfragen.ContainerService
-	 * @generated
-	 */
-	public Adapter createContainerServiceAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link cloudinfragen.IAMRole <em>IAM Role</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see cloudinfragen.IAMRole
-	 * @generated
-	 */
-	public Adapter createIAMRoleAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link cloudinfragen.IAMPolicy <em>IAM Policy</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see cloudinfragen.IAMPolicy
-	 * @generated
-	 */
-	public Adapter createIAMPolicyAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link cloudinfragen.ConfigParameter <em>Config Parameter</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see cloudinfragen.ConfigParameter
-	 * @generated
-	 */
-	public Adapter createConfigParameterAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link cloudinfragen.Secret <em>Secret</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see cloudinfragen.Secret
-	 * @generated
-	 */
-	public Adapter createSecretAdapter() {
+	public Adapter createIAMEntityAdapter() {
 		return null;
 	}
 

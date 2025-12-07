@@ -76,6 +76,8 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodel.ecore#//MonitoringService/metrics"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodel.ecore#//MonitoringService/alerts"/>
       <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference metamodel.ecore#//MonitoringService/monitoredResources"/>
+      <genOperations ecoreOperation="metamodel.ecore#//MonitoringService/newOperation1"/>
+      <genOperations ecoreOperation="metamodel.ecore#//MonitoringService/newOperation2"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

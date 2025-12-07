@@ -22,7 +22,7 @@ import org.eclipse.emf.ecore.EObject;
  * </ul>
  *
  * @see cloudinfragen.CloudinfragenPackage#getCloudResource()
- * @model abstract="true"
+ * @model interface="true" abstract="true"
  * @generated
  */
 public interface CloudResource extends EObject {

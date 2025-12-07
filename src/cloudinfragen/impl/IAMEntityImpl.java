@@ -3,41 +3,43 @@
 package cloudinfragen.impl;
 
 import cloudinfragen.CloudinfragenPackage;
-import cloudinfragen.ComputeInstance;
-import cloudinfragen.Volume;
+import cloudinfragen.IAMEntity;
 
 import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import org.eclipse.emf.ecore.util.EDataTypeEList;
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Volume</b></em>'.
+ * An implementation of the model object '<em><b>IAM Entity</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link cloudinfragen.impl.VolumeImpl#getId <em>Id</em>}</li>
- *   <li>{@link cloudinfragen.impl.VolumeImpl#getName <em>Name</em>}</li>
- *   <li>{@link cloudinfragen.impl.VolumeImpl#getRegion <em>Region</em>}</li>
- *   <li>{@link cloudinfragen.impl.VolumeImpl#getTags <em>Tags</em>}</li>
- *   <li>{@link cloudinfragen.impl.VolumeImpl#getSize <em>Size</em>}</li>
- *   <li>{@link cloudinfragen.impl.VolumeImpl#isEncrypted <em>Encrypted</em>}</li>
- *   <li>{@link cloudinfragen.impl.VolumeImpl#getAttachedTo <em>Attached To</em>}</li>
+ *   <li>{@link cloudinfragen.impl.IAMEntityImpl#getId <em>Id</em>}</li>
+ *   <li>{@link cloudinfragen.impl.IAMEntityImpl#getName <em>Name</em>}</li>
+ *   <li>{@link cloudinfragen.impl.IAMEntityImpl#getRegion <em>Region</em>}</li>
+ *   <li>{@link cloudinfragen.impl.IAMEntityImpl#getTags <em>Tags</em>}</li>
+ *   <li>{@link cloudinfragen.impl.IAMEntityImpl#getEntityType <em>Entity Type</em>}</li>
+ *   <li>{@link cloudinfragen.impl.IAMEntityImpl#getActions <em>Actions</em>}</li>
+ *   <li>{@link cloudinfragen.impl.IAMEntityImpl#getResources <em>Resources</em>}</li>
+ *   <li>{@link cloudinfragen.impl.IAMEntityImpl#getAssumeRolePolicy <em>Assume Role Policy</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class VolumeImpl extends MinimalEObjectImpl.Container implements Volume {
+public class IAMEntityImpl extends MinimalEObjectImpl.Container implements IAMEntity {
 	/**
 	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -109,61 +111,71 @@ public class VolumeImpl extends MinimalEObjectImpl.Container implements Volume {
 	protected EList<String> tags;
 
 	/**
-	 * The default value of the '{@link #getSize() <em>Size</em>}' attribute.
+	 * The default value of the '{@link #getEntityType() <em>Entity Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getSize()
+	 * @see #getEntityType()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final int SIZE_EDEFAULT = 0;
+	protected static final String ENTITY_TYPE_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getSize() <em>Size</em>}' attribute.
+	 * The cached value of the '{@link #getEntityType() <em>Entity Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getSize()
+	 * @see #getEntityType()
 	 * @generated
 	 * @ordered
 	 */
-	protected int size = SIZE_EDEFAULT;
+	protected String entityType = ENTITY_TYPE_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #isEncrypted() <em>Encrypted</em>}' attribute.
+	 * The cached value of the '{@link #getActions() <em>Actions</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isEncrypted()
+	 * @see #getActions()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final boolean ENCRYPTED_EDEFAULT = false;
+	protected EList<String> actions;
 
 	/**
-	 * The cached value of the '{@link #isEncrypted() <em>Encrypted</em>}' attribute.
+	 * The cached value of the '{@link #getResources() <em>Resources</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isEncrypted()
+	 * @see #getResources()
 	 * @generated
 	 * @ordered
 	 */
-	protected boolean encrypted = ENCRYPTED_EDEFAULT;
+	protected EList<String> resources;
 
 	/**
-	 * The cached value of the '{@link #getAttachedTo() <em>Attached To</em>}' reference.
+	 * The default value of the '{@link #getAssumeRolePolicy() <em>Assume Role Policy</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getAttachedTo()
+	 * @see #getAssumeRolePolicy()
 	 * @generated
 	 * @ordered
 	 */
-	protected ComputeInstance attachedTo;
+	protected static final String ASSUME_ROLE_POLICY_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getAssumeRolePolicy() <em>Assume Role Policy</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAssumeRolePolicy()
+	 * @generated
+	 * @ordered
+	 */
+	protected String assumeRolePolicy = ASSUME_ROLE_POLICY_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected VolumeImpl() {
+	protected IAMEntityImpl() {
 		super();
 	}
 
@@ -174,7 +186,7 @@ public class VolumeImpl extends MinimalEObjectImpl.Container implements Volume {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CloudinfragenPackage.Literals.VOLUME;
+		return CloudinfragenPackage.Literals.IAM_ENTITY;
 	}
 
 	/**
@@ -197,7 +209,7 @@ public class VolumeImpl extends MinimalEObjectImpl.Container implements Volume {
 		String oldId = id;
 		id = newId;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CloudinfragenPackage.VOLUME__ID, oldId, id));
+			eNotify(new ENotificationImpl(this, Notification.SET, CloudinfragenPackage.IAM_ENTITY__ID, oldId, id));
 	}
 
 	/**
@@ -220,7 +232,7 @@ public class VolumeImpl extends MinimalEObjectImpl.Container implements Volume {
 		String oldName = name;
 		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CloudinfragenPackage.VOLUME__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, CloudinfragenPackage.IAM_ENTITY__NAME, oldName, name));
 	}
 
 	/**
@@ -243,7 +255,7 @@ public class VolumeImpl extends MinimalEObjectImpl.Container implements Volume {
 		String oldRegion = region;
 		region = newRegion;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CloudinfragenPackage.VOLUME__REGION, oldRegion, region));
+			eNotify(new ENotificationImpl(this, Notification.SET, CloudinfragenPackage.IAM_ENTITY__REGION, oldRegion, region));
 	}
 
 	/**
@@ -254,7 +266,7 @@ public class VolumeImpl extends MinimalEObjectImpl.Container implements Volume {
 	@Override
 	public EList<String> getTags() {
 		if (tags == null) {
-			tags = new EDataTypeUniqueEList<String>(String.class, this, CloudinfragenPackage.VOLUME__TAGS);
+			tags = new EDataTypeUniqueEList<String>(String.class, this, CloudinfragenPackage.IAM_ENTITY__TAGS);
 		}
 		return tags;
 	}
@@ -265,8 +277,8 @@ public class VolumeImpl extends MinimalEObjectImpl.Container implements Volume {
 	 * @generated
 	 */
 	@Override
-	public int getSize() {
-		return size;
+	public String getEntityType() {
+		return entityType;
 	}
 
 	/**
@@ -275,11 +287,11 @@ public class VolumeImpl extends MinimalEObjectImpl.Container implements Volume {
 	 * @generated
 	 */
 	@Override
-	public void setSize(int newSize) {
-		int oldSize = size;
-		size = newSize;
+	public void setEntityType(String newEntityType) {
+		String oldEntityType = entityType;
+		entityType = newEntityType;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CloudinfragenPackage.VOLUME__SIZE, oldSize, size));
+			eNotify(new ENotificationImpl(this, Notification.SET, CloudinfragenPackage.IAM_ENTITY__ENTITY_TYPE, oldEntityType, entityType));
 	}
 
 	/**
@@ -288,8 +300,11 @@ public class VolumeImpl extends MinimalEObjectImpl.Container implements Volume {
 	 * @generated
 	 */
 	@Override
-	public boolean isEncrypted() {
-		return encrypted;
+	public EList<String> getActions() {
+		if (actions == null) {
+			actions = new EDataTypeEList<String>(String.class, this, CloudinfragenPackage.IAM_ENTITY__ACTIONS);
+		}
+		return actions;
 	}
 
 	/**
@@ -298,83 +313,34 @@ public class VolumeImpl extends MinimalEObjectImpl.Container implements Volume {
 	 * @generated
 	 */
 	@Override
-	public void setEncrypted(boolean newEncrypted) {
-		boolean oldEncrypted = encrypted;
-		encrypted = newEncrypted;
+	public EList<String> getResources() {
+		if (resources == null) {
+			resources = new EDataTypeEList<String>(String.class, this, CloudinfragenPackage.IAM_ENTITY__RESOURCES);
+		}
+		return resources;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getAssumeRolePolicy() {
+		return assumeRolePolicy;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setAssumeRolePolicy(String newAssumeRolePolicy) {
+		String oldAssumeRolePolicy = assumeRolePolicy;
+		assumeRolePolicy = newAssumeRolePolicy;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CloudinfragenPackage.VOLUME__ENCRYPTED, oldEncrypted, encrypted));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public ComputeInstance getAttachedTo() {
-		if (attachedTo != null && attachedTo.eIsProxy()) {
-			InternalEObject oldAttachedTo = (InternalEObject)attachedTo;
-			attachedTo = (ComputeInstance)eResolveProxy(oldAttachedTo);
-			if (attachedTo != oldAttachedTo) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CloudinfragenPackage.VOLUME__ATTACHED_TO, oldAttachedTo, attachedTo));
-			}
-		}
-		return attachedTo;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ComputeInstance basicGetAttachedTo() {
-		return attachedTo;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetAttachedTo(ComputeInstance newAttachedTo, NotificationChain msgs) {
-		ComputeInstance oldAttachedTo = attachedTo;
-		attachedTo = newAttachedTo;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CloudinfragenPackage.VOLUME__ATTACHED_TO, oldAttachedTo, newAttachedTo);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case CloudinfragenPackage.VOLUME__ATTACHED_TO:
-				if (attachedTo != null)
-					msgs = ((InternalEObject)attachedTo).eInverseRemove(this, CloudinfragenPackage.COMPUTE_INSTANCE__VOLUMES, ComputeInstance.class, msgs);
-				return basicSetAttachedTo((ComputeInstance)otherEnd, msgs);
-		}
-		return super.eInverseAdd(otherEnd, featureID, msgs);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case CloudinfragenPackage.VOLUME__ATTACHED_TO:
-				return basicSetAttachedTo(null, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
+			eNotify(new ENotificationImpl(this, Notification.SET, CloudinfragenPackage.IAM_ENTITY__ASSUME_ROLE_POLICY, oldAssumeRolePolicy, assumeRolePolicy));
 	}
 
 	/**
@@ -385,21 +351,22 @@ public class VolumeImpl extends MinimalEObjectImpl.Container implements Volume {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case CloudinfragenPackage.VOLUME__ID:
+			case CloudinfragenPackage.IAM_ENTITY__ID:
 				return getId();
-			case CloudinfragenPackage.VOLUME__NAME:
+			case CloudinfragenPackage.IAM_ENTITY__NAME:
 				return getName();
-			case CloudinfragenPackage.VOLUME__REGION:
+			case CloudinfragenPackage.IAM_ENTITY__REGION:
 				return getRegion();
-			case CloudinfragenPackage.VOLUME__TAGS:
+			case CloudinfragenPackage.IAM_ENTITY__TAGS:
 				return getTags();
-			case CloudinfragenPackage.VOLUME__SIZE:
-				return getSize();
-			case CloudinfragenPackage.VOLUME__ENCRYPTED:
-				return isEncrypted();
-			case CloudinfragenPackage.VOLUME__ATTACHED_TO:
-				if (resolve) return getAttachedTo();
-				return basicGetAttachedTo();
+			case CloudinfragenPackage.IAM_ENTITY__ENTITY_TYPE:
+				return getEntityType();
+			case CloudinfragenPackage.IAM_ENTITY__ACTIONS:
+				return getActions();
+			case CloudinfragenPackage.IAM_ENTITY__RESOURCES:
+				return getResources();
+			case CloudinfragenPackage.IAM_ENTITY__ASSUME_ROLE_POLICY:
+				return getAssumeRolePolicy();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -413,24 +380,32 @@ public class VolumeImpl extends MinimalEObjectImpl.Container implements Volume {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case CloudinfragenPackage.VOLUME__ID:
+			case CloudinfragenPackage.IAM_ENTITY__ID:
 				setId((String)newValue);
 				return;
-			case CloudinfragenPackage.VOLUME__NAME:
+			case CloudinfragenPackage.IAM_ENTITY__NAME:
 				setName((String)newValue);
 				return;
-			case CloudinfragenPackage.VOLUME__REGION:
+			case CloudinfragenPackage.IAM_ENTITY__REGION:
 				setRegion((String)newValue);
 				return;
-			case CloudinfragenPackage.VOLUME__TAGS:
+			case CloudinfragenPackage.IAM_ENTITY__TAGS:
 				getTags().clear();
 				getTags().addAll((Collection<? extends String>)newValue);
 				return;
-			case CloudinfragenPackage.VOLUME__SIZE:
-				setSize((Integer)newValue);
+			case CloudinfragenPackage.IAM_ENTITY__ENTITY_TYPE:
+				setEntityType((String)newValue);
 				return;
-			case CloudinfragenPackage.VOLUME__ENCRYPTED:
-				setEncrypted((Boolean)newValue);
+			case CloudinfragenPackage.IAM_ENTITY__ACTIONS:
+				getActions().clear();
+				getActions().addAll((Collection<? extends String>)newValue);
+				return;
+			case CloudinfragenPackage.IAM_ENTITY__RESOURCES:
+				getResources().clear();
+				getResources().addAll((Collection<? extends String>)newValue);
+				return;
+			case CloudinfragenPackage.IAM_ENTITY__ASSUME_ROLE_POLICY:
+				setAssumeRolePolicy((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -444,23 +419,29 @@ public class VolumeImpl extends MinimalEObjectImpl.Container implements Volume {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case CloudinfragenPackage.VOLUME__ID:
+			case CloudinfragenPackage.IAM_ENTITY__ID:
 				setId(ID_EDEFAULT);
 				return;
-			case CloudinfragenPackage.VOLUME__NAME:
+			case CloudinfragenPackage.IAM_ENTITY__NAME:
 				setName(NAME_EDEFAULT);
 				return;
-			case CloudinfragenPackage.VOLUME__REGION:
+			case CloudinfragenPackage.IAM_ENTITY__REGION:
 				setRegion(REGION_EDEFAULT);
 				return;
-			case CloudinfragenPackage.VOLUME__TAGS:
+			case CloudinfragenPackage.IAM_ENTITY__TAGS:
 				getTags().clear();
 				return;
-			case CloudinfragenPackage.VOLUME__SIZE:
-				setSize(SIZE_EDEFAULT);
+			case CloudinfragenPackage.IAM_ENTITY__ENTITY_TYPE:
+				setEntityType(ENTITY_TYPE_EDEFAULT);
 				return;
-			case CloudinfragenPackage.VOLUME__ENCRYPTED:
-				setEncrypted(ENCRYPTED_EDEFAULT);
+			case CloudinfragenPackage.IAM_ENTITY__ACTIONS:
+				getActions().clear();
+				return;
+			case CloudinfragenPackage.IAM_ENTITY__RESOURCES:
+				getResources().clear();
+				return;
+			case CloudinfragenPackage.IAM_ENTITY__ASSUME_ROLE_POLICY:
+				setAssumeRolePolicy(ASSUME_ROLE_POLICY_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -474,20 +455,22 @@ public class VolumeImpl extends MinimalEObjectImpl.Container implements Volume {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case CloudinfragenPackage.VOLUME__ID:
+			case CloudinfragenPackage.IAM_ENTITY__ID:
 				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
-			case CloudinfragenPackage.VOLUME__NAME:
+			case CloudinfragenPackage.IAM_ENTITY__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case CloudinfragenPackage.VOLUME__REGION:
+			case CloudinfragenPackage.IAM_ENTITY__REGION:
 				return REGION_EDEFAULT == null ? region != null : !REGION_EDEFAULT.equals(region);
-			case CloudinfragenPackage.VOLUME__TAGS:
+			case CloudinfragenPackage.IAM_ENTITY__TAGS:
 				return tags != null && !tags.isEmpty();
-			case CloudinfragenPackage.VOLUME__SIZE:
-				return size != SIZE_EDEFAULT;
-			case CloudinfragenPackage.VOLUME__ENCRYPTED:
-				return encrypted != ENCRYPTED_EDEFAULT;
-			case CloudinfragenPackage.VOLUME__ATTACHED_TO:
-				return attachedTo != null;
+			case CloudinfragenPackage.IAM_ENTITY__ENTITY_TYPE:
+				return ENTITY_TYPE_EDEFAULT == null ? entityType != null : !ENTITY_TYPE_EDEFAULT.equals(entityType);
+			case CloudinfragenPackage.IAM_ENTITY__ACTIONS:
+				return actions != null && !actions.isEmpty();
+			case CloudinfragenPackage.IAM_ENTITY__RESOURCES:
+				return resources != null && !resources.isEmpty();
+			case CloudinfragenPackage.IAM_ENTITY__ASSUME_ROLE_POLICY:
+				return ASSUME_ROLE_POLICY_EDEFAULT == null ? assumeRolePolicy != null : !ASSUME_ROLE_POLICY_EDEFAULT.equals(assumeRolePolicy);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -510,12 +493,16 @@ public class VolumeImpl extends MinimalEObjectImpl.Container implements Volume {
 		result.append(region);
 		result.append(", tags: ");
 		result.append(tags);
-		result.append(", size: ");
-		result.append(size);
-		result.append(", encrypted: ");
-		result.append(encrypted);
+		result.append(", entityType: ");
+		result.append(entityType);
+		result.append(", actions: ");
+		result.append(actions);
+		result.append(", resources: ");
+		result.append(resources);
+		result.append(", assumeRolePolicy: ");
+		result.append(assumeRolePolicy);
 		result.append(')');
 		return result.toString();
 	}
 
-} //VolumeImpl
+} //IAMEntityImpl

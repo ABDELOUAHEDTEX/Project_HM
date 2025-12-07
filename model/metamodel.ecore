@@ -6,7 +6,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="resources" ordered="false"
         upperBound="-1" eType="#//CloudResource" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="CloudResource" abstract="true">
+  <eClassifiers xsi:type="ecore:EClass" name="CloudResource" abstract="true" interface="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" ordered="false" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" iD="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false" unique="false"
@@ -115,6 +115,8 @@
         unique="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MonitoringService" eSuperTypes="#//CloudResource">
+    <eOperations name="newOperation1"/>
+    <eOperations name="newOperation2"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="metrics" ordered="false"
         unique="false" upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="alerts" ordered="false"

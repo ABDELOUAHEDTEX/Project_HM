@@ -15,7 +15,6 @@ import org.eclipse.emf.common.util.EList;
  * <ul>
  *   <li>{@link cloudinfragen.ComputeInstance#getOs <em>Os</em>}</li>
  *   <li>{@link cloudinfragen.ComputeInstance#getKeypair <em>Keypair</em>}</li>
- *   <li>{@link cloudinfragen.ComputeInstance#getNetworkInterfaces <em>Network Interfaces</em>}</li>
  *   <li>{@link cloudinfragen.ComputeInstance#getVolumes <em>Volumes</em>}</li>
  *   <li>{@link cloudinfragen.ComputeInstance#getSecurityGroups <em>Security Groups</em>}</li>
  * </ul>
@@ -68,18 +67,6 @@ public interface ComputeInstance extends CloudResource {
 	 * @generated
 	 */
 	void setKeypair(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Network Interfaces</b></em>' containment reference list.
-	 * The list contents are of type {@link cloudinfragen.NetworkInterface}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Network Interfaces</em>' containment reference list.
-	 * @see cloudinfragen.CloudinfragenPackage#getComputeInstance_NetworkInterfaces()
-	 * @model containment="true" ordered="false"
-	 * @generated
-	 */
-	EList<NetworkInterface> getNetworkInterfaces();
 
 	/**
 	 * Returns the value of the '<em><b>Volumes</b></em>' reference list.

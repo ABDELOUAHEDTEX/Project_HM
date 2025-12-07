@@ -7,13 +7,17 @@ import cloudinfragen.RouteTable;
 import cloudinfragen.Subnet;
 import cloudinfragen.VPC;
 
+import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -23,6 +27,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link cloudinfragen.impl.SubnetImpl#getId <em>Id</em>}</li>
+ *   <li>{@link cloudinfragen.impl.SubnetImpl#getName <em>Name</em>}</li>
+ *   <li>{@link cloudinfragen.impl.SubnetImpl#getRegion <em>Region</em>}</li>
+ *   <li>{@link cloudinfragen.impl.SubnetImpl#getTags <em>Tags</em>}</li>
  *   <li>{@link cloudinfragen.impl.SubnetImpl#getCidr <em>Cidr</em>}</li>
  *   <li>{@link cloudinfragen.impl.SubnetImpl#getAvailabilityZone <em>Availability Zone</em>}</li>
  *   <li>{@link cloudinfragen.impl.SubnetImpl#getVpc <em>Vpc</em>}</li>
@@ -31,7 +39,77 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class SubnetImpl extends CloudResourceImpl implements Subnet {
+public class SubnetImpl extends MinimalEObjectImpl.Container implements Subnet {
+	/**
+	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getId()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String ID_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getId()
+	 * @generated
+	 * @ordered
+	 */
+	protected String id = ID_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String NAME_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String name = NAME_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getRegion() <em>Region</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRegion()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String REGION_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getRegion() <em>Region</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRegion()
+	 * @generated
+	 * @ordered
+	 */
+	protected String region = REGION_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getTags() <em>Tags</em>}' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTags()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<String> tags;
+
 	/**
 	 * The default value of the '{@link #getCidr() <em>Cidr</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -99,6 +177,88 @@ public class SubnetImpl extends CloudResourceImpl implements Subnet {
 	@Override
 	protected EClass eStaticClass() {
 		return CloudinfragenPackage.Literals.SUBNET;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getId() {
+		return id;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setId(String newId) {
+		String oldId = id;
+		id = newId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CloudinfragenPackage.SUBNET__ID, oldId, id));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getName() {
+		return name;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setName(String newName) {
+		String oldName = name;
+		name = newName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CloudinfragenPackage.SUBNET__NAME, oldName, name));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getRegion() {
+		return region;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setRegion(String newRegion) {
+		String oldRegion = region;
+		region = newRegion;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CloudinfragenPackage.SUBNET__REGION, oldRegion, region));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<String> getTags() {
+		if (tags == null) {
+			tags = new EDataTypeUniqueEList<String>(String.class, this, CloudinfragenPackage.SUBNET__TAGS);
+		}
+		return tags;
 	}
 
 	/**
@@ -258,6 +418,14 @@ public class SubnetImpl extends CloudResourceImpl implements Subnet {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case CloudinfragenPackage.SUBNET__ID:
+				return getId();
+			case CloudinfragenPackage.SUBNET__NAME:
+				return getName();
+			case CloudinfragenPackage.SUBNET__REGION:
+				return getRegion();
+			case CloudinfragenPackage.SUBNET__TAGS:
+				return getTags();
 			case CloudinfragenPackage.SUBNET__CIDR:
 				return getCidr();
 			case CloudinfragenPackage.SUBNET__AVAILABILITY_ZONE:
@@ -276,9 +444,23 @@ public class SubnetImpl extends CloudResourceImpl implements Subnet {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case CloudinfragenPackage.SUBNET__ID:
+				setId((String)newValue);
+				return;
+			case CloudinfragenPackage.SUBNET__NAME:
+				setName((String)newValue);
+				return;
+			case CloudinfragenPackage.SUBNET__REGION:
+				setRegion((String)newValue);
+				return;
+			case CloudinfragenPackage.SUBNET__TAGS:
+				getTags().clear();
+				getTags().addAll((Collection<? extends String>)newValue);
+				return;
 			case CloudinfragenPackage.SUBNET__CIDR:
 				setCidr((String)newValue);
 				return;
@@ -297,6 +479,18 @@ public class SubnetImpl extends CloudResourceImpl implements Subnet {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case CloudinfragenPackage.SUBNET__ID:
+				setId(ID_EDEFAULT);
+				return;
+			case CloudinfragenPackage.SUBNET__NAME:
+				setName(NAME_EDEFAULT);
+				return;
+			case CloudinfragenPackage.SUBNET__REGION:
+				setRegion(REGION_EDEFAULT);
+				return;
+			case CloudinfragenPackage.SUBNET__TAGS:
+				getTags().clear();
+				return;
 			case CloudinfragenPackage.SUBNET__CIDR:
 				setCidr(CIDR_EDEFAULT);
 				return;
@@ -315,6 +509,14 @@ public class SubnetImpl extends CloudResourceImpl implements Subnet {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case CloudinfragenPackage.SUBNET__ID:
+				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
+			case CloudinfragenPackage.SUBNET__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case CloudinfragenPackage.SUBNET__REGION:
+				return REGION_EDEFAULT == null ? region != null : !REGION_EDEFAULT.equals(region);
+			case CloudinfragenPackage.SUBNET__TAGS:
+				return tags != null && !tags.isEmpty();
 			case CloudinfragenPackage.SUBNET__CIDR:
 				return CIDR_EDEFAULT == null ? cidr != null : !CIDR_EDEFAULT.equals(cidr);
 			case CloudinfragenPackage.SUBNET__AVAILABILITY_ZONE:
@@ -337,7 +539,15 @@ public class SubnetImpl extends CloudResourceImpl implements Subnet {
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (cidr: ");
+		result.append(" (id: ");
+		result.append(id);
+		result.append(", name: ");
+		result.append(name);
+		result.append(", region: ");
+		result.append(region);
+		result.append(", tags: ");
+		result.append(tags);
+		result.append(", cidr: ");
 		result.append(cidr);
 		result.append(", availabilityZone: ");
 		result.append(availabilityZone);

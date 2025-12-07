@@ -59,4 +59,20 @@ public interface MonitoringService extends CloudResource {
 	 */
 	EList<CloudResource> getMonitoredResources();
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	void newOperation1();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	void newOperation2();
+
 } // MonitoringService

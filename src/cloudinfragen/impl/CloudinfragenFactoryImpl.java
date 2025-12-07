@@ -65,17 +65,9 @@ public class CloudinfragenFactoryImpl extends EFactoryImpl implements Cloudinfra
 			case CloudinfragenPackage.VPC: return createVPC();
 			case CloudinfragenPackage.SUBNET: return createSubnet();
 			case CloudinfragenPackage.ROUTE_TABLE: return createRouteTable();
-			case CloudinfragenPackage.NETWORK_INTERFACE: return createNetworkInterface();
 			case CloudinfragenPackage.SECURITY_GROUP: return createSecurityGroup();
 			case CloudinfragenPackage.LOAD_BALANCER: return createLoadBalancer();
-			case CloudinfragenPackage.DATABASE_INSTANCE: return createDatabaseInstance();
-			case CloudinfragenPackage.NO_SQL_DATABASE: return createNoSQLDatabase();
-			case CloudinfragenPackage.FUNCTION: return createFunction();
-			case CloudinfragenPackage.CONTAINER_SERVICE: return createContainerService();
-			case CloudinfragenPackage.IAM_ROLE: return createIAMRole();
-			case CloudinfragenPackage.IAM_POLICY: return createIAMPolicy();
-			case CloudinfragenPackage.CONFIG_PARAMETER: return createConfigParameter();
-			case CloudinfragenPackage.SECRET: return createSecret();
+			case CloudinfragenPackage.IAM_ENTITY: return createIAMEntity();
 			case CloudinfragenPackage.MONITORING_SERVICE: return createMonitoringService();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -187,17 +179,6 @@ public class CloudinfragenFactoryImpl extends EFactoryImpl implements Cloudinfra
 	 * @generated
 	 */
 	@Override
-	public NetworkInterface createNetworkInterface() {
-		NetworkInterfaceImpl networkInterface = new NetworkInterfaceImpl();
-		return networkInterface;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public SecurityGroup createSecurityGroup() {
 		SecurityGroupImpl securityGroup = new SecurityGroupImpl();
 		return securityGroup;
@@ -220,86 +201,9 @@ public class CloudinfragenFactoryImpl extends EFactoryImpl implements Cloudinfra
 	 * @generated
 	 */
 	@Override
-	public DatabaseInstance createDatabaseInstance() {
-		DatabaseInstanceImpl databaseInstance = new DatabaseInstanceImpl();
-		return databaseInstance;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public NoSQLDatabase createNoSQLDatabase() {
-		NoSQLDatabaseImpl noSQLDatabase = new NoSQLDatabaseImpl();
-		return noSQLDatabase;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Function createFunction() {
-		FunctionImpl function = new FunctionImpl();
-		return function;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public ContainerService createContainerService() {
-		ContainerServiceImpl containerService = new ContainerServiceImpl();
-		return containerService;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public IAMRole createIAMRole() {
-		IAMRoleImpl iamRole = new IAMRoleImpl();
-		return iamRole;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public IAMPolicy createIAMPolicy() {
-		IAMPolicyImpl iamPolicy = new IAMPolicyImpl();
-		return iamPolicy;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public ConfigParameter createConfigParameter() {
-		ConfigParameterImpl configParameter = new ConfigParameterImpl();
-		return configParameter;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Secret createSecret() {
-		SecretImpl secret = new SecretImpl();
-		return secret;
+	public IAMEntity createIAMEntity() {
+		IAMEntityImpl iamEntity = new IAMEntityImpl();
+		return iamEntity;
 	}
 
 	/**

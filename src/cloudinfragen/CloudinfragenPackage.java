@@ -4,6 +4,7 @@ package cloudinfragen;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -94,10 +95,10 @@ public interface CloudinfragenPackage extends EPackage {
 	int INFRASTRUCTURE_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link cloudinfragen.impl.CloudResourceImpl <em>Cloud Resource</em>}' class.
+	 * The meta object id for the '{@link cloudinfragen.CloudResource <em>Cloud Resource</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see cloudinfragen.impl.CloudResourceImpl
+	 * @see cloudinfragen.CloudResource
 	 * @see cloudinfragen.impl.CloudinfragenPackageImpl#getCloudResource()
 	 * @generated
 	 */
@@ -222,22 +223,13 @@ public interface CloudinfragenPackage extends EPackage {
 	int COMPUTE_INSTANCE__KEYPAIR = CLOUD_RESOURCE_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Network Interfaces</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPUTE_INSTANCE__NETWORK_INTERFACES = CLOUD_RESOURCE_FEATURE_COUNT + 2;
-
-	/**
 	 * The feature id for the '<em><b>Volumes</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPUTE_INSTANCE__VOLUMES = CLOUD_RESOURCE_FEATURE_COUNT + 3;
+	int COMPUTE_INSTANCE__VOLUMES = CLOUD_RESOURCE_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Security Groups</b></em>' reference list.
@@ -246,7 +238,7 @@ public interface CloudinfragenPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPUTE_INSTANCE__SECURITY_GROUPS = CLOUD_RESOURCE_FEATURE_COUNT + 4;
+	int COMPUTE_INSTANCE__SECURITY_GROUPS = CLOUD_RESOURCE_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Compute Instance</em>' class.
@@ -255,7 +247,7 @@ public interface CloudinfragenPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPUTE_INSTANCE_FEATURE_COUNT = CLOUD_RESOURCE_FEATURE_COUNT + 5;
+	int COMPUTE_INSTANCE_FEATURE_COUNT = CLOUD_RESOURCE_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of operations of the '<em>Compute Instance</em>' class.
@@ -904,106 +896,6 @@ public interface CloudinfragenPackage extends EPackage {
 	int ROUTE_TABLE_OPERATION_COUNT = CLOUD_RESOURCE_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link cloudinfragen.impl.NetworkInterfaceImpl <em>Network Interface</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see cloudinfragen.impl.NetworkInterfaceImpl
-	 * @see cloudinfragen.impl.CloudinfragenPackageImpl#getNetworkInterface()
-	 * @generated
-	 */
-	int NETWORK_INTERFACE = 10;
-
-	/**
-	 * The feature id for the '<em><b>Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NETWORK_INTERFACE__ID = CLOUD_RESOURCE__ID;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NETWORK_INTERFACE__NAME = CLOUD_RESOURCE__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Region</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NETWORK_INTERFACE__REGION = CLOUD_RESOURCE__REGION;
-
-	/**
-	 * The feature id for the '<em><b>Tags</b></em>' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NETWORK_INTERFACE__TAGS = CLOUD_RESOURCE__TAGS;
-
-	/**
-	 * The feature id for the '<em><b>Private IP</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NETWORK_INTERFACE__PRIVATE_IP = CLOUD_RESOURCE_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Public IP</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NETWORK_INTERFACE__PUBLIC_IP = CLOUD_RESOURCE_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Subnet</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NETWORK_INTERFACE__SUBNET = CLOUD_RESOURCE_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Security Groups</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NETWORK_INTERFACE__SECURITY_GROUPS = CLOUD_RESOURCE_FEATURE_COUNT + 3;
-
-	/**
-	 * The number of structural features of the '<em>Network Interface</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NETWORK_INTERFACE_FEATURE_COUNT = CLOUD_RESOURCE_FEATURE_COUNT + 4;
-
-	/**
-	 * The number of operations of the '<em>Network Interface</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NETWORK_INTERFACE_OPERATION_COUNT = CLOUD_RESOURCE_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link cloudinfragen.impl.SecurityGroupImpl <em>Security Group</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1011,7 +903,7 @@ public interface CloudinfragenPackage extends EPackage {
 	 * @see cloudinfragen.impl.CloudinfragenPackageImpl#getSecurityGroup()
 	 * @generated
 	 */
-	int SECURITY_GROUP = 11;
+	int SECURITY_GROUP = 10;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -1093,7 +985,7 @@ public interface CloudinfragenPackage extends EPackage {
 	 * @see cloudinfragen.impl.CloudinfragenPackageImpl#getLoadBalancer()
 	 * @generated
 	 */
-	int LOAD_BALANCER = 12;
+	int LOAD_BALANCER = 11;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -1186,14 +1078,14 @@ public interface CloudinfragenPackage extends EPackage {
 	int LOAD_BALANCER_OPERATION_COUNT = CLOUD_RESOURCE_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link cloudinfragen.impl.DatabaseInstanceImpl <em>Database Instance</em>}' class.
+	 * The meta object id for the '{@link cloudinfragen.impl.IAMEntityImpl <em>IAM Entity</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see cloudinfragen.impl.DatabaseInstanceImpl
-	 * @see cloudinfragen.impl.CloudinfragenPackageImpl#getDatabaseInstance()
+	 * @see cloudinfragen.impl.IAMEntityImpl
+	 * @see cloudinfragen.impl.CloudinfragenPackageImpl#getIAMEntity()
 	 * @generated
 	 */
-	int DATABASE_INSTANCE = 13;
+	int IAM_ENTITY = 12;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -1202,7 +1094,7 @@ public interface CloudinfragenPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATABASE_INSTANCE__ID = CLOUD_RESOURCE__ID;
+	int IAM_ENTITY__ID = CLOUD_RESOURCE__ID;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1211,7 +1103,7 @@ public interface CloudinfragenPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATABASE_INSTANCE__NAME = CLOUD_RESOURCE__NAME;
+	int IAM_ENTITY__NAME = CLOUD_RESOURCE__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Region</b></em>' attribute.
@@ -1220,7 +1112,7 @@ public interface CloudinfragenPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATABASE_INSTANCE__REGION = CLOUD_RESOURCE__REGION;
+	int IAM_ENTITY__REGION = CLOUD_RESOURCE__REGION;
 
 	/**
 	 * The feature id for the '<em><b>Tags</b></em>' attribute list.
@@ -1229,498 +1121,16 @@ public interface CloudinfragenPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATABASE_INSTANCE__TAGS = CLOUD_RESOURCE__TAGS;
+	int IAM_ENTITY__TAGS = CLOUD_RESOURCE__TAGS;
 
 	/**
-	 * The feature id for the '<em><b>Engine</b></em>' attribute.
+	 * The feature id for the '<em><b>Entity Type</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DATABASE_INSTANCE__ENGINE = CLOUD_RESOURCE_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Version</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATABASE_INSTANCE__VERSION = CLOUD_RESOURCE_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Storage Size</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATABASE_INSTANCE__STORAGE_SIZE = CLOUD_RESOURCE_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Multi AZ</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATABASE_INSTANCE__MULTI_AZ = CLOUD_RESOURCE_FEATURE_COUNT + 3;
-
-	/**
-	 * The feature id for the '<em><b>Subnet</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATABASE_INSTANCE__SUBNET = CLOUD_RESOURCE_FEATURE_COUNT + 4;
-
-	/**
-	 * The feature id for the '<em><b>Security Groups</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATABASE_INSTANCE__SECURITY_GROUPS = CLOUD_RESOURCE_FEATURE_COUNT + 5;
-
-	/**
-	 * The number of structural features of the '<em>Database Instance</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATABASE_INSTANCE_FEATURE_COUNT = CLOUD_RESOURCE_FEATURE_COUNT + 6;
-
-	/**
-	 * The number of operations of the '<em>Database Instance</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATABASE_INSTANCE_OPERATION_COUNT = CLOUD_RESOURCE_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link cloudinfragen.impl.NoSQLDatabaseImpl <em>No SQL Database</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see cloudinfragen.impl.NoSQLDatabaseImpl
-	 * @see cloudinfragen.impl.CloudinfragenPackageImpl#getNoSQLDatabase()
-	 * @generated
-	 */
-	int NO_SQL_DATABASE = 14;
-
-	/**
-	 * The feature id for the '<em><b>Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NO_SQL_DATABASE__ID = CLOUD_RESOURCE__ID;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NO_SQL_DATABASE__NAME = CLOUD_RESOURCE__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Region</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NO_SQL_DATABASE__REGION = CLOUD_RESOURCE__REGION;
-
-	/**
-	 * The feature id for the '<em><b>Tags</b></em>' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NO_SQL_DATABASE__TAGS = CLOUD_RESOURCE__TAGS;
-
-	/**
-	 * The feature id for the '<em><b>Engine</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NO_SQL_DATABASE__ENGINE = CLOUD_RESOURCE_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Throughput Capacity</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NO_SQL_DATABASE__THROUGHPUT_CAPACITY = CLOUD_RESOURCE_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Replica Count</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NO_SQL_DATABASE__REPLICA_COUNT = CLOUD_RESOURCE_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of structural features of the '<em>No SQL Database</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NO_SQL_DATABASE_FEATURE_COUNT = CLOUD_RESOURCE_FEATURE_COUNT + 3;
-
-	/**
-	 * The number of operations of the '<em>No SQL Database</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NO_SQL_DATABASE_OPERATION_COUNT = CLOUD_RESOURCE_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link cloudinfragen.impl.FunctionImpl <em>Function</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see cloudinfragen.impl.FunctionImpl
-	 * @see cloudinfragen.impl.CloudinfragenPackageImpl#getFunction()
-	 * @generated
-	 */
-	int FUNCTION = 15;
-
-	/**
-	 * The feature id for the '<em><b>Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FUNCTION__ID = CLOUD_RESOURCE__ID;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FUNCTION__NAME = CLOUD_RESOURCE__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Region</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FUNCTION__REGION = CLOUD_RESOURCE__REGION;
-
-	/**
-	 * The feature id for the '<em><b>Tags</b></em>' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FUNCTION__TAGS = CLOUD_RESOURCE__TAGS;
-
-	/**
-	 * The feature id for the '<em><b>Runtime</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FUNCTION__RUNTIME = CLOUD_RESOURCE_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Trigger</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FUNCTION__TRIGGER = CLOUD_RESOURCE_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Iam Role</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FUNCTION__IAM_ROLE = CLOUD_RESOURCE_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of structural features of the '<em>Function</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FUNCTION_FEATURE_COUNT = CLOUD_RESOURCE_FEATURE_COUNT + 3;
-
-	/**
-	 * The number of operations of the '<em>Function</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FUNCTION_OPERATION_COUNT = CLOUD_RESOURCE_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link cloudinfragen.impl.ContainerServiceImpl <em>Container Service</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see cloudinfragen.impl.ContainerServiceImpl
-	 * @see cloudinfragen.impl.CloudinfragenPackageImpl#getContainerService()
-	 * @generated
-	 */
-	int CONTAINER_SERVICE = 16;
-
-	/**
-	 * The feature id for the '<em><b>Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTAINER_SERVICE__ID = CLOUD_RESOURCE__ID;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTAINER_SERVICE__NAME = CLOUD_RESOURCE__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Region</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTAINER_SERVICE__REGION = CLOUD_RESOURCE__REGION;
-
-	/**
-	 * The feature id for the '<em><b>Tags</b></em>' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTAINER_SERVICE__TAGS = CLOUD_RESOURCE__TAGS;
-
-	/**
-	 * The feature id for the '<em><b>Cluster Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTAINER_SERVICE__CLUSTER_NAME = CLOUD_RESOURCE_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Number Of Containers</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTAINER_SERVICE__NUMBER_OF_CONTAINERS = CLOUD_RESOURCE_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Image</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTAINER_SERVICE__IMAGE = CLOUD_RESOURCE_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Subnets</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTAINER_SERVICE__SUBNETS = CLOUD_RESOURCE_FEATURE_COUNT + 3;
-
-	/**
-	 * The feature id for the '<em><b>Security Groups</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTAINER_SERVICE__SECURITY_GROUPS = CLOUD_RESOURCE_FEATURE_COUNT + 4;
-
-	/**
-	 * The number of structural features of the '<em>Container Service</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTAINER_SERVICE_FEATURE_COUNT = CLOUD_RESOURCE_FEATURE_COUNT + 5;
-
-	/**
-	 * The number of operations of the '<em>Container Service</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTAINER_SERVICE_OPERATION_COUNT = CLOUD_RESOURCE_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link cloudinfragen.impl.IAMRoleImpl <em>IAM Role</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see cloudinfragen.impl.IAMRoleImpl
-	 * @see cloudinfragen.impl.CloudinfragenPackageImpl#getIAMRole()
-	 * @generated
-	 */
-	int IAM_ROLE = 17;
-
-	/**
-	 * The feature id for the '<em><b>Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IAM_ROLE__ID = CLOUD_RESOURCE__ID;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IAM_ROLE__NAME = CLOUD_RESOURCE__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Region</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IAM_ROLE__REGION = CLOUD_RESOURCE__REGION;
-
-	/**
-	 * The feature id for the '<em><b>Tags</b></em>' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IAM_ROLE__TAGS = CLOUD_RESOURCE__TAGS;
-
-	/**
-	 * The feature id for the '<em><b>Assume Role Policy</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IAM_ROLE__ASSUME_ROLE_POLICY = CLOUD_RESOURCE_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Policies</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IAM_ROLE__POLICIES = CLOUD_RESOURCE_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>IAM Role</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IAM_ROLE_FEATURE_COUNT = CLOUD_RESOURCE_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of operations of the '<em>IAM Role</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IAM_ROLE_OPERATION_COUNT = CLOUD_RESOURCE_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link cloudinfragen.impl.IAMPolicyImpl <em>IAM Policy</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see cloudinfragen.impl.IAMPolicyImpl
-	 * @see cloudinfragen.impl.CloudinfragenPackageImpl#getIAMPolicy()
-	 * @generated
-	 */
-	int IAM_POLICY = 18;
-
-	/**
-	 * The feature id for the '<em><b>Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IAM_POLICY__ID = CLOUD_RESOURCE__ID;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IAM_POLICY__NAME = CLOUD_RESOURCE__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Region</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IAM_POLICY__REGION = CLOUD_RESOURCE__REGION;
-
-	/**
-	 * The feature id for the '<em><b>Tags</b></em>' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IAM_POLICY__TAGS = CLOUD_RESOURCE__TAGS;
+	int IAM_ENTITY__ENTITY_TYPE = CLOUD_RESOURCE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Actions</b></em>' attribute list.
@@ -1729,7 +1139,7 @@ public interface CloudinfragenPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IAM_POLICY__ACTIONS = CLOUD_RESOURCE_FEATURE_COUNT + 0;
+	int IAM_ENTITY__ACTIONS = CLOUD_RESOURCE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Resources</b></em>' attribute list.
@@ -1738,198 +1148,34 @@ public interface CloudinfragenPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IAM_POLICY__RESOURCES = CLOUD_RESOURCE_FEATURE_COUNT + 1;
+	int IAM_ENTITY__RESOURCES = CLOUD_RESOURCE_FEATURE_COUNT + 2;
 
 	/**
-	 * The number of structural features of the '<em>IAM Policy</em>' class.
+	 * The feature id for the '<em><b>Assume Role Policy</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IAM_POLICY_FEATURE_COUNT = CLOUD_RESOURCE_FEATURE_COUNT + 2;
+	int IAM_ENTITY__ASSUME_ROLE_POLICY = CLOUD_RESOURCE_FEATURE_COUNT + 3;
 
 	/**
-	 * The number of operations of the '<em>IAM Policy</em>' class.
+	 * The number of structural features of the '<em>IAM Entity</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IAM_POLICY_OPERATION_COUNT = CLOUD_RESOURCE_OPERATION_COUNT + 0;
+	int IAM_ENTITY_FEATURE_COUNT = CLOUD_RESOURCE_FEATURE_COUNT + 4;
 
 	/**
-	 * The meta object id for the '{@link cloudinfragen.impl.ConfigParameterImpl <em>Config Parameter</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see cloudinfragen.impl.ConfigParameterImpl
-	 * @see cloudinfragen.impl.CloudinfragenPackageImpl#getConfigParameter()
-	 * @generated
-	 */
-	int CONFIG_PARAMETER = 19;
-
-	/**
-	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * The number of operations of the '<em>IAM Entity</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONFIG_PARAMETER__ID = CLOUD_RESOURCE__ID;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONFIG_PARAMETER__NAME = CLOUD_RESOURCE__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Region</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONFIG_PARAMETER__REGION = CLOUD_RESOURCE__REGION;
-
-	/**
-	 * The feature id for the '<em><b>Tags</b></em>' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONFIG_PARAMETER__TAGS = CLOUD_RESOURCE__TAGS;
-
-	/**
-	 * The feature id for the '<em><b>Key</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONFIG_PARAMETER__KEY = CLOUD_RESOURCE_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Value</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONFIG_PARAMETER__VALUE = CLOUD_RESOURCE_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Type</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONFIG_PARAMETER__TYPE = CLOUD_RESOURCE_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of structural features of the '<em>Config Parameter</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONFIG_PARAMETER_FEATURE_COUNT = CLOUD_RESOURCE_FEATURE_COUNT + 3;
-
-	/**
-	 * The number of operations of the '<em>Config Parameter</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONFIG_PARAMETER_OPERATION_COUNT = CLOUD_RESOURCE_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link cloudinfragen.impl.SecretImpl <em>Secret</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see cloudinfragen.impl.SecretImpl
-	 * @see cloudinfragen.impl.CloudinfragenPackageImpl#getSecret()
-	 * @generated
-	 */
-	int SECRET = 20;
-
-	/**
-	 * The feature id for the '<em><b>Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECRET__ID = CLOUD_RESOURCE__ID;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECRET__NAME = CLOUD_RESOURCE__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Region</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECRET__REGION = CLOUD_RESOURCE__REGION;
-
-	/**
-	 * The feature id for the '<em><b>Tags</b></em>' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECRET__TAGS = CLOUD_RESOURCE__TAGS;
-
-	/**
-	 * The feature id for the '<em><b>Key</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECRET__KEY = CLOUD_RESOURCE_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Encrypted</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECRET__ENCRYPTED = CLOUD_RESOURCE_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>Secret</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECRET_FEATURE_COUNT = CLOUD_RESOURCE_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of operations of the '<em>Secret</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECRET_OPERATION_COUNT = CLOUD_RESOURCE_OPERATION_COUNT + 0;
+	int IAM_ENTITY_OPERATION_COUNT = CLOUD_RESOURCE_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link cloudinfragen.impl.MonitoringServiceImpl <em>Monitoring Service</em>}' class.
@@ -1939,7 +1185,7 @@ public interface CloudinfragenPackage extends EPackage {
 	 * @see cloudinfragen.impl.CloudinfragenPackageImpl#getMonitoringService()
 	 * @generated
 	 */
-	int MONITORING_SERVICE = 21;
+	int MONITORING_SERVICE = 13;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -2014,13 +1260,31 @@ public interface CloudinfragenPackage extends EPackage {
 	int MONITORING_SERVICE_FEATURE_COUNT = CLOUD_RESOURCE_FEATURE_COUNT + 3;
 
 	/**
+	 * The operation id for the '<em>New Operation1</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MONITORING_SERVICE___NEW_OPERATION1 = CLOUD_RESOURCE_OPERATION_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>New Operation2</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MONITORING_SERVICE___NEW_OPERATION2 = CLOUD_RESOURCE_OPERATION_COUNT + 1;
+
+	/**
 	 * The number of operations of the '<em>Monitoring Service</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MONITORING_SERVICE_OPERATION_COUNT = CLOUD_RESOURCE_OPERATION_COUNT + 0;
+	int MONITORING_SERVICE_OPERATION_COUNT = CLOUD_RESOURCE_OPERATION_COUNT + 2;
 
 
 	/**
@@ -2129,17 +1393,6 @@ public interface CloudinfragenPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getComputeInstance_Keypair();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link cloudinfragen.ComputeInstance#getNetworkInterfaces <em>Network Interfaces</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Network Interfaces</em>'.
-	 * @see cloudinfragen.ComputeInstance#getNetworkInterfaces()
-	 * @see #getComputeInstance()
-	 * @generated
-	 */
-	EReference getComputeInstance_NetworkInterfaces();
 
 	/**
 	 * Returns the meta object for the reference list '{@link cloudinfragen.ComputeInstance#getVolumes <em>Volumes</em>}'.
@@ -2465,60 +1718,6 @@ public interface CloudinfragenPackage extends EPackage {
 	EReference getRouteTable_Subnets();
 
 	/**
-	 * Returns the meta object for class '{@link cloudinfragen.NetworkInterface <em>Network Interface</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Network Interface</em>'.
-	 * @see cloudinfragen.NetworkInterface
-	 * @generated
-	 */
-	EClass getNetworkInterface();
-
-	/**
-	 * Returns the meta object for the attribute '{@link cloudinfragen.NetworkInterface#getPrivateIP <em>Private IP</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Private IP</em>'.
-	 * @see cloudinfragen.NetworkInterface#getPrivateIP()
-	 * @see #getNetworkInterface()
-	 * @generated
-	 */
-	EAttribute getNetworkInterface_PrivateIP();
-
-	/**
-	 * Returns the meta object for the attribute '{@link cloudinfragen.NetworkInterface#getPublicIP <em>Public IP</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Public IP</em>'.
-	 * @see cloudinfragen.NetworkInterface#getPublicIP()
-	 * @see #getNetworkInterface()
-	 * @generated
-	 */
-	EAttribute getNetworkInterface_PublicIP();
-
-	/**
-	 * Returns the meta object for the reference '{@link cloudinfragen.NetworkInterface#getSubnet <em>Subnet</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Subnet</em>'.
-	 * @see cloudinfragen.NetworkInterface#getSubnet()
-	 * @see #getNetworkInterface()
-	 * @generated
-	 */
-	EReference getNetworkInterface_Subnet();
-
-	/**
-	 * Returns the meta object for the reference list '{@link cloudinfragen.NetworkInterface#getSecurityGroups <em>Security Groups</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Security Groups</em>'.
-	 * @see cloudinfragen.NetworkInterface#getSecurityGroups()
-	 * @see #getNetworkInterface()
-	 * @generated
-	 */
-	EReference getNetworkInterface_SecurityGroups();
-
-	/**
 	 * Returns the meta object for class '{@link cloudinfragen.SecurityGroup <em>Security Group</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2605,370 +1804,58 @@ public interface CloudinfragenPackage extends EPackage {
 	EReference getLoadBalancer_Subnets();
 
 	/**
-	 * Returns the meta object for class '{@link cloudinfragen.DatabaseInstance <em>Database Instance</em>}'.
+	 * Returns the meta object for class '{@link cloudinfragen.IAMEntity <em>IAM Entity</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Database Instance</em>'.
-	 * @see cloudinfragen.DatabaseInstance
+	 * @return the meta object for class '<em>IAM Entity</em>'.
+	 * @see cloudinfragen.IAMEntity
 	 * @generated
 	 */
-	EClass getDatabaseInstance();
+	EClass getIAMEntity();
 
 	/**
-	 * Returns the meta object for the attribute '{@link cloudinfragen.DatabaseInstance#getEngine <em>Engine</em>}'.
+	 * Returns the meta object for the attribute '{@link cloudinfragen.IAMEntity#getEntityType <em>Entity Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Engine</em>'.
-	 * @see cloudinfragen.DatabaseInstance#getEngine()
-	 * @see #getDatabaseInstance()
+	 * @return the meta object for the attribute '<em>Entity Type</em>'.
+	 * @see cloudinfragen.IAMEntity#getEntityType()
+	 * @see #getIAMEntity()
 	 * @generated
 	 */
-	EAttribute getDatabaseInstance_Engine();
+	EAttribute getIAMEntity_EntityType();
 
 	/**
-	 * Returns the meta object for the attribute '{@link cloudinfragen.DatabaseInstance#getVersion <em>Version</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Version</em>'.
-	 * @see cloudinfragen.DatabaseInstance#getVersion()
-	 * @see #getDatabaseInstance()
-	 * @generated
-	 */
-	EAttribute getDatabaseInstance_Version();
-
-	/**
-	 * Returns the meta object for the attribute '{@link cloudinfragen.DatabaseInstance#getStorageSize <em>Storage Size</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Storage Size</em>'.
-	 * @see cloudinfragen.DatabaseInstance#getStorageSize()
-	 * @see #getDatabaseInstance()
-	 * @generated
-	 */
-	EAttribute getDatabaseInstance_StorageSize();
-
-	/**
-	 * Returns the meta object for the attribute '{@link cloudinfragen.DatabaseInstance#isMultiAZ <em>Multi AZ</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Multi AZ</em>'.
-	 * @see cloudinfragen.DatabaseInstance#isMultiAZ()
-	 * @see #getDatabaseInstance()
-	 * @generated
-	 */
-	EAttribute getDatabaseInstance_MultiAZ();
-
-	/**
-	 * Returns the meta object for the reference '{@link cloudinfragen.DatabaseInstance#getSubnet <em>Subnet</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Subnet</em>'.
-	 * @see cloudinfragen.DatabaseInstance#getSubnet()
-	 * @see #getDatabaseInstance()
-	 * @generated
-	 */
-	EReference getDatabaseInstance_Subnet();
-
-	/**
-	 * Returns the meta object for the reference list '{@link cloudinfragen.DatabaseInstance#getSecurityGroups <em>Security Groups</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Security Groups</em>'.
-	 * @see cloudinfragen.DatabaseInstance#getSecurityGroups()
-	 * @see #getDatabaseInstance()
-	 * @generated
-	 */
-	EReference getDatabaseInstance_SecurityGroups();
-
-	/**
-	 * Returns the meta object for class '{@link cloudinfragen.NoSQLDatabase <em>No SQL Database</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>No SQL Database</em>'.
-	 * @see cloudinfragen.NoSQLDatabase
-	 * @generated
-	 */
-	EClass getNoSQLDatabase();
-
-	/**
-	 * Returns the meta object for the attribute '{@link cloudinfragen.NoSQLDatabase#getEngine <em>Engine</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Engine</em>'.
-	 * @see cloudinfragen.NoSQLDatabase#getEngine()
-	 * @see #getNoSQLDatabase()
-	 * @generated
-	 */
-	EAttribute getNoSQLDatabase_Engine();
-
-	/**
-	 * Returns the meta object for the attribute '{@link cloudinfragen.NoSQLDatabase#getThroughputCapacity <em>Throughput Capacity</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Throughput Capacity</em>'.
-	 * @see cloudinfragen.NoSQLDatabase#getThroughputCapacity()
-	 * @see #getNoSQLDatabase()
-	 * @generated
-	 */
-	EAttribute getNoSQLDatabase_ThroughputCapacity();
-
-	/**
-	 * Returns the meta object for the attribute '{@link cloudinfragen.NoSQLDatabase#getReplicaCount <em>Replica Count</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Replica Count</em>'.
-	 * @see cloudinfragen.NoSQLDatabase#getReplicaCount()
-	 * @see #getNoSQLDatabase()
-	 * @generated
-	 */
-	EAttribute getNoSQLDatabase_ReplicaCount();
-
-	/**
-	 * Returns the meta object for class '{@link cloudinfragen.Function <em>Function</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Function</em>'.
-	 * @see cloudinfragen.Function
-	 * @generated
-	 */
-	EClass getFunction();
-
-	/**
-	 * Returns the meta object for the attribute '{@link cloudinfragen.Function#getRuntime <em>Runtime</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Runtime</em>'.
-	 * @see cloudinfragen.Function#getRuntime()
-	 * @see #getFunction()
-	 * @generated
-	 */
-	EAttribute getFunction_Runtime();
-
-	/**
-	 * Returns the meta object for the attribute '{@link cloudinfragen.Function#getTrigger <em>Trigger</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Trigger</em>'.
-	 * @see cloudinfragen.Function#getTrigger()
-	 * @see #getFunction()
-	 * @generated
-	 */
-	EAttribute getFunction_Trigger();
-
-	/**
-	 * Returns the meta object for the reference '{@link cloudinfragen.Function#getIamRole <em>Iam Role</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Iam Role</em>'.
-	 * @see cloudinfragen.Function#getIamRole()
-	 * @see #getFunction()
-	 * @generated
-	 */
-	EReference getFunction_IamRole();
-
-	/**
-	 * Returns the meta object for class '{@link cloudinfragen.ContainerService <em>Container Service</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Container Service</em>'.
-	 * @see cloudinfragen.ContainerService
-	 * @generated
-	 */
-	EClass getContainerService();
-
-	/**
-	 * Returns the meta object for the attribute '{@link cloudinfragen.ContainerService#getClusterName <em>Cluster Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Cluster Name</em>'.
-	 * @see cloudinfragen.ContainerService#getClusterName()
-	 * @see #getContainerService()
-	 * @generated
-	 */
-	EAttribute getContainerService_ClusterName();
-
-	/**
-	 * Returns the meta object for the attribute '{@link cloudinfragen.ContainerService#getNumberOfContainers <em>Number Of Containers</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Number Of Containers</em>'.
-	 * @see cloudinfragen.ContainerService#getNumberOfContainers()
-	 * @see #getContainerService()
-	 * @generated
-	 */
-	EAttribute getContainerService_NumberOfContainers();
-
-	/**
-	 * Returns the meta object for the attribute '{@link cloudinfragen.ContainerService#getImage <em>Image</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Image</em>'.
-	 * @see cloudinfragen.ContainerService#getImage()
-	 * @see #getContainerService()
-	 * @generated
-	 */
-	EAttribute getContainerService_Image();
-
-	/**
-	 * Returns the meta object for the reference list '{@link cloudinfragen.ContainerService#getSubnets <em>Subnets</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Subnets</em>'.
-	 * @see cloudinfragen.ContainerService#getSubnets()
-	 * @see #getContainerService()
-	 * @generated
-	 */
-	EReference getContainerService_Subnets();
-
-	/**
-	 * Returns the meta object for the reference list '{@link cloudinfragen.ContainerService#getSecurityGroups <em>Security Groups</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Security Groups</em>'.
-	 * @see cloudinfragen.ContainerService#getSecurityGroups()
-	 * @see #getContainerService()
-	 * @generated
-	 */
-	EReference getContainerService_SecurityGroups();
-
-	/**
-	 * Returns the meta object for class '{@link cloudinfragen.IAMRole <em>IAM Role</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>IAM Role</em>'.
-	 * @see cloudinfragen.IAMRole
-	 * @generated
-	 */
-	EClass getIAMRole();
-
-	/**
-	 * Returns the meta object for the attribute '{@link cloudinfragen.IAMRole#getAssumeRolePolicy <em>Assume Role Policy</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Assume Role Policy</em>'.
-	 * @see cloudinfragen.IAMRole#getAssumeRolePolicy()
-	 * @see #getIAMRole()
-	 * @generated
-	 */
-	EAttribute getIAMRole_AssumeRolePolicy();
-
-	/**
-	 * Returns the meta object for the reference list '{@link cloudinfragen.IAMRole#getPolicies <em>Policies</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Policies</em>'.
-	 * @see cloudinfragen.IAMRole#getPolicies()
-	 * @see #getIAMRole()
-	 * @generated
-	 */
-	EReference getIAMRole_Policies();
-
-	/**
-	 * Returns the meta object for class '{@link cloudinfragen.IAMPolicy <em>IAM Policy</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>IAM Policy</em>'.
-	 * @see cloudinfragen.IAMPolicy
-	 * @generated
-	 */
-	EClass getIAMPolicy();
-
-	/**
-	 * Returns the meta object for the attribute list '{@link cloudinfragen.IAMPolicy#getActions <em>Actions</em>}'.
+	 * Returns the meta object for the attribute list '{@link cloudinfragen.IAMEntity#getActions <em>Actions</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute list '<em>Actions</em>'.
-	 * @see cloudinfragen.IAMPolicy#getActions()
-	 * @see #getIAMPolicy()
+	 * @see cloudinfragen.IAMEntity#getActions()
+	 * @see #getIAMEntity()
 	 * @generated
 	 */
-	EAttribute getIAMPolicy_Actions();
+	EAttribute getIAMEntity_Actions();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link cloudinfragen.IAMPolicy#getResources <em>Resources</em>}'.
+	 * Returns the meta object for the attribute list '{@link cloudinfragen.IAMEntity#getResources <em>Resources</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute list '<em>Resources</em>'.
-	 * @see cloudinfragen.IAMPolicy#getResources()
-	 * @see #getIAMPolicy()
+	 * @see cloudinfragen.IAMEntity#getResources()
+	 * @see #getIAMEntity()
 	 * @generated
 	 */
-	EAttribute getIAMPolicy_Resources();
+	EAttribute getIAMEntity_Resources();
 
 	/**
-	 * Returns the meta object for class '{@link cloudinfragen.ConfigParameter <em>Config Parameter</em>}'.
+	 * Returns the meta object for the attribute '{@link cloudinfragen.IAMEntity#getAssumeRolePolicy <em>Assume Role Policy</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Config Parameter</em>'.
-	 * @see cloudinfragen.ConfigParameter
+	 * @return the meta object for the attribute '<em>Assume Role Policy</em>'.
+	 * @see cloudinfragen.IAMEntity#getAssumeRolePolicy()
+	 * @see #getIAMEntity()
 	 * @generated
 	 */
-	EClass getConfigParameter();
-
-	/**
-	 * Returns the meta object for the attribute '{@link cloudinfragen.ConfigParameter#getKey <em>Key</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Key</em>'.
-	 * @see cloudinfragen.ConfigParameter#getKey()
-	 * @see #getConfigParameter()
-	 * @generated
-	 */
-	EAttribute getConfigParameter_Key();
-
-	/**
-	 * Returns the meta object for the attribute '{@link cloudinfragen.ConfigParameter#getValue <em>Value</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Value</em>'.
-	 * @see cloudinfragen.ConfigParameter#getValue()
-	 * @see #getConfigParameter()
-	 * @generated
-	 */
-	EAttribute getConfigParameter_Value();
-
-	/**
-	 * Returns the meta object for the attribute '{@link cloudinfragen.ConfigParameter#getType <em>Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Type</em>'.
-	 * @see cloudinfragen.ConfigParameter#getType()
-	 * @see #getConfigParameter()
-	 * @generated
-	 */
-	EAttribute getConfigParameter_Type();
-
-	/**
-	 * Returns the meta object for class '{@link cloudinfragen.Secret <em>Secret</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Secret</em>'.
-	 * @see cloudinfragen.Secret
-	 * @generated
-	 */
-	EClass getSecret();
-
-	/**
-	 * Returns the meta object for the attribute '{@link cloudinfragen.Secret#getKey <em>Key</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Key</em>'.
-	 * @see cloudinfragen.Secret#getKey()
-	 * @see #getSecret()
-	 * @generated
-	 */
-	EAttribute getSecret_Key();
-
-	/**
-	 * Returns the meta object for the attribute '{@link cloudinfragen.Secret#isEncrypted <em>Encrypted</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Encrypted</em>'.
-	 * @see cloudinfragen.Secret#isEncrypted()
-	 * @see #getSecret()
-	 * @generated
-	 */
-	EAttribute getSecret_Encrypted();
+	EAttribute getIAMEntity_AssumeRolePolicy();
 
 	/**
 	 * Returns the meta object for class '{@link cloudinfragen.MonitoringService <em>Monitoring Service</em>}'.
@@ -3014,6 +1901,26 @@ public interface CloudinfragenPackage extends EPackage {
 	EReference getMonitoringService_MonitoredResources();
 
 	/**
+	 * Returns the meta object for the '{@link cloudinfragen.MonitoringService#newOperation1() <em>New Operation1</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>New Operation1</em>' operation.
+	 * @see cloudinfragen.MonitoringService#newOperation1()
+	 * @generated
+	 */
+	EOperation getMonitoringService__NewOperation1();
+
+	/**
+	 * Returns the meta object for the '{@link cloudinfragen.MonitoringService#newOperation2() <em>New Operation2</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>New Operation2</em>' operation.
+	 * @see cloudinfragen.MonitoringService#newOperation2()
+	 * @generated
+	 */
+	EOperation getMonitoringService__NewOperation2();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3055,10 +1962,10 @@ public interface CloudinfragenPackage extends EPackage {
 		EReference INFRASTRUCTURE__RESOURCES = eINSTANCE.getInfrastructure_Resources();
 
 		/**
-		 * The meta object literal for the '{@link cloudinfragen.impl.CloudResourceImpl <em>Cloud Resource</em>}' class.
+		 * The meta object literal for the '{@link cloudinfragen.CloudResource <em>Cloud Resource</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see cloudinfragen.impl.CloudResourceImpl
+		 * @see cloudinfragen.CloudResource
 		 * @see cloudinfragen.impl.CloudinfragenPackageImpl#getCloudResource()
 		 * @generated
 		 */
@@ -3121,14 +2028,6 @@ public interface CloudinfragenPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute COMPUTE_INSTANCE__KEYPAIR = eINSTANCE.getComputeInstance_Keypair();
-
-		/**
-		 * The meta object literal for the '<em><b>Network Interfaces</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference COMPUTE_INSTANCE__NETWORK_INTERFACES = eINSTANCE.getComputeInstance_NetworkInterfaces();
 
 		/**
 		 * The meta object literal for the '<em><b>Volumes</b></em>' reference list feature.
@@ -3385,48 +2284,6 @@ public interface CloudinfragenPackage extends EPackage {
 		EReference ROUTE_TABLE__SUBNETS = eINSTANCE.getRouteTable_Subnets();
 
 		/**
-		 * The meta object literal for the '{@link cloudinfragen.impl.NetworkInterfaceImpl <em>Network Interface</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see cloudinfragen.impl.NetworkInterfaceImpl
-		 * @see cloudinfragen.impl.CloudinfragenPackageImpl#getNetworkInterface()
-		 * @generated
-		 */
-		EClass NETWORK_INTERFACE = eINSTANCE.getNetworkInterface();
-
-		/**
-		 * The meta object literal for the '<em><b>Private IP</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute NETWORK_INTERFACE__PRIVATE_IP = eINSTANCE.getNetworkInterface_PrivateIP();
-
-		/**
-		 * The meta object literal for the '<em><b>Public IP</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute NETWORK_INTERFACE__PUBLIC_IP = eINSTANCE.getNetworkInterface_PublicIP();
-
-		/**
-		 * The meta object literal for the '<em><b>Subnet</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference NETWORK_INTERFACE__SUBNET = eINSTANCE.getNetworkInterface_Subnet();
-
-		/**
-		 * The meta object literal for the '<em><b>Security Groups</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference NETWORK_INTERFACE__SECURITY_GROUPS = eINSTANCE.getNetworkInterface_SecurityGroups();
-
-		/**
 		 * The meta object literal for the '{@link cloudinfragen.impl.SecurityGroupImpl <em>Security Group</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3495,216 +2352,22 @@ public interface CloudinfragenPackage extends EPackage {
 		EReference LOAD_BALANCER__SUBNETS = eINSTANCE.getLoadBalancer_Subnets();
 
 		/**
-		 * The meta object literal for the '{@link cloudinfragen.impl.DatabaseInstanceImpl <em>Database Instance</em>}' class.
+		 * The meta object literal for the '{@link cloudinfragen.impl.IAMEntityImpl <em>IAM Entity</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see cloudinfragen.impl.DatabaseInstanceImpl
-		 * @see cloudinfragen.impl.CloudinfragenPackageImpl#getDatabaseInstance()
+		 * @see cloudinfragen.impl.IAMEntityImpl
+		 * @see cloudinfragen.impl.CloudinfragenPackageImpl#getIAMEntity()
 		 * @generated
 		 */
-		EClass DATABASE_INSTANCE = eINSTANCE.getDatabaseInstance();
+		EClass IAM_ENTITY = eINSTANCE.getIAMEntity();
 
 		/**
-		 * The meta object literal for the '<em><b>Engine</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Entity Type</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute DATABASE_INSTANCE__ENGINE = eINSTANCE.getDatabaseInstance_Engine();
-
-		/**
-		 * The meta object literal for the '<em><b>Version</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute DATABASE_INSTANCE__VERSION = eINSTANCE.getDatabaseInstance_Version();
-
-		/**
-		 * The meta object literal for the '<em><b>Storage Size</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute DATABASE_INSTANCE__STORAGE_SIZE = eINSTANCE.getDatabaseInstance_StorageSize();
-
-		/**
-		 * The meta object literal for the '<em><b>Multi AZ</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute DATABASE_INSTANCE__MULTI_AZ = eINSTANCE.getDatabaseInstance_MultiAZ();
-
-		/**
-		 * The meta object literal for the '<em><b>Subnet</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference DATABASE_INSTANCE__SUBNET = eINSTANCE.getDatabaseInstance_Subnet();
-
-		/**
-		 * The meta object literal for the '<em><b>Security Groups</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference DATABASE_INSTANCE__SECURITY_GROUPS = eINSTANCE.getDatabaseInstance_SecurityGroups();
-
-		/**
-		 * The meta object literal for the '{@link cloudinfragen.impl.NoSQLDatabaseImpl <em>No SQL Database</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see cloudinfragen.impl.NoSQLDatabaseImpl
-		 * @see cloudinfragen.impl.CloudinfragenPackageImpl#getNoSQLDatabase()
-		 * @generated
-		 */
-		EClass NO_SQL_DATABASE = eINSTANCE.getNoSQLDatabase();
-
-		/**
-		 * The meta object literal for the '<em><b>Engine</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute NO_SQL_DATABASE__ENGINE = eINSTANCE.getNoSQLDatabase_Engine();
-
-		/**
-		 * The meta object literal for the '<em><b>Throughput Capacity</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute NO_SQL_DATABASE__THROUGHPUT_CAPACITY = eINSTANCE.getNoSQLDatabase_ThroughputCapacity();
-
-		/**
-		 * The meta object literal for the '<em><b>Replica Count</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute NO_SQL_DATABASE__REPLICA_COUNT = eINSTANCE.getNoSQLDatabase_ReplicaCount();
-
-		/**
-		 * The meta object literal for the '{@link cloudinfragen.impl.FunctionImpl <em>Function</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see cloudinfragen.impl.FunctionImpl
-		 * @see cloudinfragen.impl.CloudinfragenPackageImpl#getFunction()
-		 * @generated
-		 */
-		EClass FUNCTION = eINSTANCE.getFunction();
-
-		/**
-		 * The meta object literal for the '<em><b>Runtime</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute FUNCTION__RUNTIME = eINSTANCE.getFunction_Runtime();
-
-		/**
-		 * The meta object literal for the '<em><b>Trigger</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute FUNCTION__TRIGGER = eINSTANCE.getFunction_Trigger();
-
-		/**
-		 * The meta object literal for the '<em><b>Iam Role</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference FUNCTION__IAM_ROLE = eINSTANCE.getFunction_IamRole();
-
-		/**
-		 * The meta object literal for the '{@link cloudinfragen.impl.ContainerServiceImpl <em>Container Service</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see cloudinfragen.impl.ContainerServiceImpl
-		 * @see cloudinfragen.impl.CloudinfragenPackageImpl#getContainerService()
-		 * @generated
-		 */
-		EClass CONTAINER_SERVICE = eINSTANCE.getContainerService();
-
-		/**
-		 * The meta object literal for the '<em><b>Cluster Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute CONTAINER_SERVICE__CLUSTER_NAME = eINSTANCE.getContainerService_ClusterName();
-
-		/**
-		 * The meta object literal for the '<em><b>Number Of Containers</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute CONTAINER_SERVICE__NUMBER_OF_CONTAINERS = eINSTANCE.getContainerService_NumberOfContainers();
-
-		/**
-		 * The meta object literal for the '<em><b>Image</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute CONTAINER_SERVICE__IMAGE = eINSTANCE.getContainerService_Image();
-
-		/**
-		 * The meta object literal for the '<em><b>Subnets</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference CONTAINER_SERVICE__SUBNETS = eINSTANCE.getContainerService_Subnets();
-
-		/**
-		 * The meta object literal for the '<em><b>Security Groups</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference CONTAINER_SERVICE__SECURITY_GROUPS = eINSTANCE.getContainerService_SecurityGroups();
-
-		/**
-		 * The meta object literal for the '{@link cloudinfragen.impl.IAMRoleImpl <em>IAM Role</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see cloudinfragen.impl.IAMRoleImpl
-		 * @see cloudinfragen.impl.CloudinfragenPackageImpl#getIAMRole()
-		 * @generated
-		 */
-		EClass IAM_ROLE = eINSTANCE.getIAMRole();
-
-		/**
-		 * The meta object literal for the '<em><b>Assume Role Policy</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute IAM_ROLE__ASSUME_ROLE_POLICY = eINSTANCE.getIAMRole_AssumeRolePolicy();
-
-		/**
-		 * The meta object literal for the '<em><b>Policies</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference IAM_ROLE__POLICIES = eINSTANCE.getIAMRole_Policies();
-
-		/**
-		 * The meta object literal for the '{@link cloudinfragen.impl.IAMPolicyImpl <em>IAM Policy</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see cloudinfragen.impl.IAMPolicyImpl
-		 * @see cloudinfragen.impl.CloudinfragenPackageImpl#getIAMPolicy()
-		 * @generated
-		 */
-		EClass IAM_POLICY = eINSTANCE.getIAMPolicy();
+		EAttribute IAM_ENTITY__ENTITY_TYPE = eINSTANCE.getIAMEntity_EntityType();
 
 		/**
 		 * The meta object literal for the '<em><b>Actions</b></em>' attribute list feature.
@@ -3712,7 +2375,7 @@ public interface CloudinfragenPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute IAM_POLICY__ACTIONS = eINSTANCE.getIAMPolicy_Actions();
+		EAttribute IAM_ENTITY__ACTIONS = eINSTANCE.getIAMEntity_Actions();
 
 		/**
 		 * The meta object literal for the '<em><b>Resources</b></em>' attribute list feature.
@@ -3720,67 +2383,15 @@ public interface CloudinfragenPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute IAM_POLICY__RESOURCES = eINSTANCE.getIAMPolicy_Resources();
+		EAttribute IAM_ENTITY__RESOURCES = eINSTANCE.getIAMEntity_Resources();
 
 		/**
-		 * The meta object literal for the '{@link cloudinfragen.impl.ConfigParameterImpl <em>Config Parameter</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see cloudinfragen.impl.ConfigParameterImpl
-		 * @see cloudinfragen.impl.CloudinfragenPackageImpl#getConfigParameter()
-		 * @generated
-		 */
-		EClass CONFIG_PARAMETER = eINSTANCE.getConfigParameter();
-
-		/**
-		 * The meta object literal for the '<em><b>Key</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Assume Role Policy</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute CONFIG_PARAMETER__KEY = eINSTANCE.getConfigParameter_Key();
-
-		/**
-		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute CONFIG_PARAMETER__VALUE = eINSTANCE.getConfigParameter_Value();
-
-		/**
-		 * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute CONFIG_PARAMETER__TYPE = eINSTANCE.getConfigParameter_Type();
-
-		/**
-		 * The meta object literal for the '{@link cloudinfragen.impl.SecretImpl <em>Secret</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see cloudinfragen.impl.SecretImpl
-		 * @see cloudinfragen.impl.CloudinfragenPackageImpl#getSecret()
-		 * @generated
-		 */
-		EClass SECRET = eINSTANCE.getSecret();
-
-		/**
-		 * The meta object literal for the '<em><b>Key</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute SECRET__KEY = eINSTANCE.getSecret_Key();
-
-		/**
-		 * The meta object literal for the '<em><b>Encrypted</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute SECRET__ENCRYPTED = eINSTANCE.getSecret_Encrypted();
+		EAttribute IAM_ENTITY__ASSUME_ROLE_POLICY = eINSTANCE.getIAMEntity_AssumeRolePolicy();
 
 		/**
 		 * The meta object literal for the '{@link cloudinfragen.impl.MonitoringServiceImpl <em>Monitoring Service</em>}' class.
@@ -3815,6 +2426,22 @@ public interface CloudinfragenPackage extends EPackage {
 		 * @generated
 		 */
 		EReference MONITORING_SERVICE__MONITORED_RESOURCES = eINSTANCE.getMonitoringService_MonitoredResources();
+
+		/**
+		 * The meta object literal for the '<em><b>New Operation1</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation MONITORING_SERVICE___NEW_OPERATION1 = eINSTANCE.getMonitoringService__NewOperation1();
+
+		/**
+		 * The meta object literal for the '<em><b>New Operation2</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation MONITORING_SERVICE___NEW_OPERATION2 = eINSTANCE.getMonitoringService__NewOperation2();
 
 	}
 
