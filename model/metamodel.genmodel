@@ -66,47 +66,11 @@
       <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference metamodel.ecore#//LoadBalancer/instances"/>
       <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference metamodel.ecore#//LoadBalancer/subnets"/>
     </genClasses>
-    <genClasses ecoreClass="metamodel.ecore#//DatabaseInstance">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodel.ecore#//DatabaseInstance/engine"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodel.ecore#//DatabaseInstance/version"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodel.ecore#//DatabaseInstance/storageSize"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodel.ecore#//DatabaseInstance/multiAZ"/>
-      <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference metamodel.ecore#//DatabaseInstance/subnet"/>
-      <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference metamodel.ecore#//DatabaseInstance/securityGroups"/>
-    </genClasses>
-    <genClasses ecoreClass="metamodel.ecore#//NoSQLDatabase">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodel.ecore#//NoSQLDatabase/engine"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodel.ecore#//NoSQLDatabase/throughputCapacity"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodel.ecore#//NoSQLDatabase/replicaCount"/>
-    </genClasses>
-    <genClasses ecoreClass="metamodel.ecore#//Function">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodel.ecore#//Function/runtime"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodel.ecore#//Function/trigger"/>
-      <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference metamodel.ecore#//Function/iamRole"/>
-    </genClasses>
-    <genClasses ecoreClass="metamodel.ecore#//ContainerService">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodel.ecore#//ContainerService/clusterName"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodel.ecore#//ContainerService/numberOfContainers"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodel.ecore#//ContainerService/image"/>
-      <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference metamodel.ecore#//ContainerService/subnets"/>
-      <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference metamodel.ecore#//ContainerService/securityGroups"/>
-    </genClasses>
-    <genClasses ecoreClass="metamodel.ecore#//IAMRole">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodel.ecore#//IAMRole/assumeRolePolicy"/>
-      <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference metamodel.ecore#//IAMRole/policies"/>
-    </genClasses>
-    <genClasses ecoreClass="metamodel.ecore#//IAMPolicy">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodel.ecore#//IAMPolicy/actions"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodel.ecore#//IAMPolicy/resources"/>
-    </genClasses>
-    <genClasses ecoreClass="metamodel.ecore#//ConfigParameter">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodel.ecore#//ConfigParameter/key"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodel.ecore#//ConfigParameter/value"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodel.ecore#//ConfigParameter/type"/>
-    </genClasses>
-    <genClasses ecoreClass="metamodel.ecore#//Secret">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodel.ecore#//Secret/key"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodel.ecore#//Secret/encrypted"/>
+    <genClasses ecoreClass="metamodel.ecore#//IAMEntity">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodel.ecore#//IAMEntity/entityType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodel.ecore#//IAMEntity/actions"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodel.ecore#//IAMEntity/resources"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodel.ecore#//IAMEntity/assumeRolePolicy"/>
     </genClasses>
     <genClasses ecoreClass="metamodel.ecore#//MonitoringService">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodel.ecore#//MonitoringService/metrics"/>
