@@ -1,0 +1,26 @@
+echo bin/ > .gitignore
+echo target/ >> .gitignore
+echo .settings/ >> .gitignore
+echo .classpath >> .gitignore
+echo .project >> .gitignore
+echo *.class >> .gitignore
+```
+
+Ou créez manuellement un fichier `.gitignore` avec :
+```
+# Eclipse
+bin/
+target/
+.settings/
+.classpath
+.project
+
+# Compiled
+*.class
+
+# Generated
+src-gen/
+
+# OS
+.DS_Store
+Thumbs.db
