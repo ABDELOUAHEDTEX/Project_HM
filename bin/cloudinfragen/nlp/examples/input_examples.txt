@@ -1,0 +1,282 @@
+# CloudInfraGen - Exemples d'entrées NLP
+# Ce fichier contient des exemples de descriptions en langage naturel
+
+# ============================================================================
+# NIVEAU DÉBUTANT - Architectures simples
+# ============================================================================
+
+## Exemple 1: Simple web server
+Je veux un serveur EC2 t2.micro
+
+## Exemple 2: Web avec database
+Créer un serveur EC2 avec une base de données MySQL
+
+## Exemple 3: Stockage de fichiers
+Je veux un bucket S3 pour stocker des images
+
+## Exemple 4: Serveur avec OS spécifique
+Instance EC2 t2.small avec Ubuntu Linux
+
+
+# ============================================================================
+# NIVEAU INTERMÉDIAIRE - Architectures multi-composants
+# ============================================================================
+
+## Exemple 5: Application web classique
+Serveur web EC2 t2.medium avec RDS MySQL db.t3.small et S3 pour les fichiers statiques
+
+## Exemple 6: Architecture avec load balancer
+3 instances EC2 t2.small derrière un Application Load Balancer avec HTTPS
+
+## Exemple 7: Infrastructure sécurisée
+EC2 t2.micro avec security group autorisant HTTP, HTTPS et SSH
+
+## Exemple 8: Plateforme avec VPC
+VPC 10.0.0.0/16 avec 2 serveurs EC2 t2.medium et RDS PostgreSQL
+
+## Exemple 9: Stockage multi-usage
+S3 pour images et videos, EBS volume 100GB pour données, backup sur Glacier
+
+
+# ============================================================================
+# NIVEAU AVANCÉ - Architectures complexes
+# ============================================================================
+
+## Exemple 10: E-commerce platform
+Infrastructure e-commerce: 
+- 5 instances EC2 t2.large 
+- RDS MySQL db.m5.xlarge avec 500GB 
+- S3 pour produits images 
+- CloudFront CDN 
+- Application Load Balancer 
+- Security groups ports 80 et 443
+
+## Exemple 11: Microservices sur containers
+Architecture microservices:
+- EKS cluster avec 15 pods
+- RDS PostgreSQL multi-AZ db.r5.large
+- DynamoDB pour cache
+- S3 pour logs et backup
+- API Gateway
+- VPC 10.0.0.0/16 avec 3 subnets
+
+## Exemple 12: Data analytics platform
+Plateforme analytics:
+- 3 EC2 t3.2xlarge pour processing
+- RDS PostgreSQL db.r5.xlarge 1TB
+- S3 data lake 10TB
+- ElastiCache Redis pour cache
+- VPC privé avec NAT Gateway
+
+## Exemple 13: Mobile backend API
+Backend mobile:
+- API Gateway REST
+- Lambda functions
+- DynamoDB tables
+- S3 pour user uploads
+- CloudFront pour CDN
+- Cognito pour authentication
+
+## Exemple 14: Three-tier application
+Application 3-tiers:
+- Internet-facing ALB
+- 4 EC2 t3.large web servers
+- Internal NLB
+- 3 EC2 t3.medium app servers
+- RDS MySQL Multi-AZ db.m5.xlarge
+- S3 pour static assets
+- VPC avec subnets publics et privés
+- Security groups pour chaque tier
+
+
+# ============================================================================
+# CAS SPÉCIFIQUES - Scénarios particuliers
+# ============================================================================
+
+## Exemple 15: Dev/Test environment
+Environnement de développement:
+- 2 EC2 t2.small dev servers
+- RDS MySQL db.t2.micro
+- S3 pour artifacts
+- Security group SSH only
+
+## Exemple 16: High availability
+Infrastructure haute disponibilité:
+- 6 EC2 t3.large répartis sur 3 AZ
+- RDS Aurora Multi-AZ
+- ElastiCache Redis Cluster
+- Application Load Balancer multi-AZ
+- S3 avec replication cross-region
+
+## Exemple 17: Serverless architecture
+Architecture serverless complète:
+- API Gateway avec Lambda
+- DynamoDB avec auto-scaling
+- S3 pour static website
+- CloudFront CDN
+- Step Functions pour orchestration
+- EventBridge pour events
+
+## Exemple 18: Big Data processing
+Pipeline big data:
+- 10 EC2 r5.4xlarge pour Spark
+- S3 data lake 50TB
+- RDS PostgreSQL pour metadata
+- ElastiCache Redis
+- VPC avec enhanced networking
+
+## Exemple 19: Gaming backend
+Backend jeu vidéo:
+- Game servers: 20 EC2 c5.xlarge
+- DynamoDB pour player data
+- ElastiCache Redis pour sessions
+- S3 pour game assets
+- CloudFront global CDN
+- Network Load Balancer
+- Auto Scaling groups
+
+## Exemple 20: Multi-region setup
+Déploiement multi-région:
+- 5 EC2 t3.large en eu-west-1
+- 5 EC2 t3.large en us-east-1
+- RDS Aurora Global Database
+- S3 replication entre régions
+- Route53 geo-routing
+- CloudFront distributions
+
+
+# ============================================================================
+# AVEC CONTRAINTES - Spécifications détaillées
+# ============================================================================
+
+## Exemple 21: Budget limité
+Infrastructure low-cost:
+- 1 EC2 t2.micro Ubuntu
+- RDS MySQL db.t2.micro 20GB
+- S3 Standard storage
+- Security group basique
+
+## Exemple 22: Haute sécurité
+Infrastructure sécurisée:
+- EC2 dans subnet privé
+- RDS avec encryption at rest
+- S3 avec encryption et versioning
+- Security groups restrictifs
+- VPC avec NAT Gateway
+- CloudWatch logs enabled
+- IAM roles avec least privilege
+
+## Exemple 23: Auto-scaling
+Infrastructure élastique:
+- Auto Scaling group 2-10 instances EC2 t3.medium
+- Application Load Balancer
+- RDS Aurora auto-scaling read replicas
+- ElastiCache auto-scaling
+- CloudWatch alarms
+
+## Exemple 24: Compliance requirements
+Infrastructure conforme:
+- EC2 encrypted volumes
+- RDS Multi-AZ avec backups
+- S3 avec versioning et MFA delete
+- CloudTrail enabled
+- VPC flow logs
+- KMS encryption keys
+
+## Exemple 25: Performance optimisée
+Infrastructure haute performance:
+- 10 EC2 c5.4xlarge optimized
+- RDS Aurora Serverless v2
+- ElastiCache Redis avec replication
+- EFS pour shared storage
+- Enhanced networking enabled
+- Placement groups
+
+
+# ============================================================================
+# FRANÇAIS AVANCÉ - Descriptions naturelles
+# ============================================================================
+
+## Exemple 26
+J'aimerais déployer une application web moderne avec une architecture scalable. 
+Il me faut plusieurs serveurs pour gérer la charge, une base de données relationnelle 
+performante, du stockage pour les médias des utilisateurs, et bien sûr un load balancer 
+pour distribuer le trafic. La sécurité est importante donc j'ai besoin de groupes de 
+sécurité appropriés.
+
+## Exemple 27
+Pour notre startup, on a besoin d'une infrastructure cloud pas trop chère pour commencer. 
+Un petit serveur devrait suffire, avec une base MySQL et un endroit pour stocker 
+les fichiers des clients. On verra pour scaler plus tard.
+
+## Exemple 28
+Infrastructure enterprise: nous voulons une architecture trois tiers classique avec 
+des serveurs web publics, des serveurs applicatifs privés, et une base de données 
+hautement disponible. Le tout dans un VPC isolé avec des sous-réseaux publics et privés. 
+Ajoutez aussi un CDN pour la distribution mondiale de notre contenu statique.
+
+
+# ============================================================================
+# ENGLISH EXAMPLES - Descriptions en anglais
+# ============================================================================
+
+## Example 29
+I need a simple web server with a MySQL database and S3 storage for user uploads
+
+## Example 30
+Deploy a microservices architecture using Kubernetes with PostgreSQL database, 
+Redis cache, API Gateway, and CDN for global content delivery
+
+## Example 31
+Create a high-availability setup with 6 web servers across multiple availability zones, 
+Aurora database with read replicas, load balancer, and CloudFront CDN
+
+## Example 32
+Serverless backend for mobile app: API Gateway, Lambda functions, DynamoDB tables, 
+S3 for file storage, and Cognito for user authentication
+
+
+# ============================================================================
+# EDGE CASES - Cas limites et ambigus
+# ============================================================================
+
+## Exemple 33 - Ambiguïté sur les quantités
+Je veux quelques serveurs EC2 avec une base de données
+
+## Exemple 34 - Services non spécifiés
+Créer une infrastructure pour application web
+
+## Exemple 35 - Termes génériques
+Je veux du stockage et du calcul dans le cloud
+
+## Exemple 36 - Mix français/anglais
+Je veux un server EC2 avec une database MySQL et un bucket S3
+
+## Exemple 37 - Descriptions très courtes
+EC2 et RDS
+
+## Exemple 38 - Descriptions très longues
+Je voudrais mettre en place une infrastructure cloud complète pour notre nouvelle application 
+e-commerce qui va servir des milliers d'utilisateurs simultanés. On a besoin de serveurs web 
+robustes qui peuvent gérer beaucoup de requêtes, une base de données performante qui ne tombe 
+jamais en panne, du stockage pour toutes les photos de produits et les documents, un système 
+qui distribue bien le trafic entre tous nos serveurs, et évidemment tout doit être super 
+sécurisé avec des pare-feu et tout le nécessaire.
+
+
+# ============================================================================
+# NOTES POUR LES DÉVELOPPEURS
+# ============================================================================
+
+# Ces exemples couvrent:
+# - Différents niveaux de complexité (simple → avancé)
+# - Différents cas d'usage (web, mobile, analytics, gaming...)
+# - Différentes langues (français, anglais)
+# - Différents niveaux de détail (spécifique → vague)
+# - Cas limites et ambiguïtés
+
+# Utilisation recommandée:
+# 1. Tester le parser avec ces exemples
+# 2. Mesurer la précision pour chaque catégorie
+# 3. Identifier les patterns qui fonctionnent mal
+# 4. Améliorer le parser itérativement
