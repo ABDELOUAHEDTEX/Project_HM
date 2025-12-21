@@ -1,0 +1,60 @@
+{
+  "name": "SimpleWebApp",
+  "provider": "AWS",
+  "version": "1.0",
+  "description": "3 serveurs EC2 t2.medium avec MySQL",
+  "resources": {
+    "compute": [
+      {
+        "id": "14027f8d-e674-4641-b24d-58ad9124e83e",
+        "name": "EC2-t2.medium",
+        "type": "ComputeInstance",
+        "properties": {
+          "engine": "EC2",
+          "instanceType": "t2.medium",
+          "count": 3,
+          "os": null,
+          "region": null,
+          "availabilityZone": null
+        },
+        "tags": {}
+      }
+    ],
+    "database": [
+      {
+        "id": "5fd71165-9584-49bb-8888-f80a20faf180",
+        "name": "RDS-Mysql",
+        "type": "DatabaseInstance",
+        "properties": {
+          "engine": "RDS",
+          "dbEngine": "Mysql",
+          "instanceClass": null,
+          "storageSize": null,
+          "multiAZ": false,
+          "backupRetention": 7
+        },
+        "tags": {}
+      }
+    ],
+    "storage": [],
+    "network": {
+      "vpcs": [],
+      "loadBalancers": []
+    },
+    "security": [],
+    "containers": []
+  },
+  "relations": [
+    {
+      "source": "14027f8d-e674-4641-b24d-58ad9124e83e",
+      "target": "5fd71165-9584-49bb-8888-f80a20faf180",
+      "type": "connects_to",
+      "properties": {}
+    }
+  ],
+  "metadata": {
+    "createdAt": "2025-12-21T14:05:04.938075",
+    "updatedAt": null,
+    "tags": {}
+  }
+}
