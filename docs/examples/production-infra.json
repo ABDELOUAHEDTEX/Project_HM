@@ -1,0 +1,110 @@
+{
+  "provider": "AWS",
+  "resources": [
+    {
+      "type": "VPC",
+      "name": "production-vpc",
+      "cidr": "10.0.0.0/16",
+      "region": "us-east-1"
+    },
+    {
+      "type": "Subnet",
+      "name": "public-subnet-1a",
+      "cidr": "10.0.1.0/24",
+      "typeSubnet": "public",
+      "vpc": "production-vpc",
+      "availabilityZone": "us-east-1a"
+    },
+    {
+      "type": "Subnet",
+      "name": "public-subnet-1b",
+      "cidr": "10.0.2.0/24",
+      "typeSubnet": "public",
+      "vpc": "production-vpc",
+      "availabilityZone": "us-east-1b"
+    },
+    {
+      "type": "Subnet",
+      "name": "private-subnet-1a",
+      "cidr": "10.0.11.0/24",
+      "typeSubnet": "private",
+      "vpc": "production-vpc",
+      "availabilityZone": "us-east-1a"
+    },
+    {
+      "type": "Subnet",
+      "name": "private-subnet-1b",
+      "cidr": "10.0.12.0/24",
+      "typeSubnet": "private",
+      "vpc": "production-vpc",
+      "availabilityZone": "us-east-1b"
+    },
+    {
+      "type": "SecurityGroup",
+      "name": "alb-sg",
+      "inboundRules": ["HTTP:80", "HTTPS:443"],
+      "outboundRules": ["ALL"]
+    },
+    {
+      "type": "SecurityGroup",
+      "name": "web-sg",
+      "inboundRules": ["HTTP:80", "HTTPS:443"],
+      "outboundRules": ["ALL"]
+    },
+    {
+      "type": "SecurityGroup",
+      "name": "db-sg",
+      "inboundRules": ["MySQL:3306"],
+      "outboundRules": []
+    },
+    {
+      "type": "LoadBalancer",
+      "name": "production-alb",
+      "type": "application"
+    },
+    {
+      "type": "ComputeInstance",
+      "name": "web-server-template",
+      "os": "linux",
+      "image": "ami-0c55b159cbfafe1f0",
+      "securityGroups": ["web-sg"],
+      "subnet": "private-subnet-1a"
+    },
+    {
+      "type": "AutoScalingGroup",
+      "name": "web-asg",
+      "minSize": 2,
+      "maxSize": 10,
+      "desiredCapacity": 4,
+      "template": "web-server-template"
+    },
+    {
+      "type": "DatabaseInstance",
+      "name": "production-db",
+      "engine": "mysql",
+      "version": "8.0",
+      "storageSize": 200,
+      "multiAZ": true,
+      "subnet": "private-subnet-1a",
+      "securityGroups": ["db-sg"]
+    },
+    {
+      "type": "StorageBucket",
+      "name": "production-backups",
+      "versioning": true,
+      "publicAccess": false
+    },
+    {
+      "type": "Function",
+      "name": "async-processor",
+      "runtime": "python3.9",
+      "trigger": "s3"
+    },
+    {
+      "type": "MonitoringService",
+      "name": "production-monitoring",
+      "metrics": ["CPU", "Memory", "Network", "Disk"]
+    }
+  ]
+}
+

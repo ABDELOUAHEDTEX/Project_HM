@@ -1,0 +1,39 @@
+{
+  "provider": "AWS",
+  "resources": [
+    {
+      "type": "VPC",
+      "name": "main-vpc",
+      "cidr": "10.0.0.0/16"
+    },
+    {
+      "type": "Subnet",
+      "name": "public-subnet",
+      "cidr": "10.0.1.0/24",
+      "typeSubnet": "public"
+    },
+    {
+      "type": "SecurityGroup",
+      "name": "web-sg",
+      "inboundRules": ["HTTP:80", "HTTPS:443"]
+    },
+    {
+      "type": "ComputeInstance",
+      "name": "web-server",
+      "os": "linux",
+      "securityGroups": ["web-sg"]
+    },
+    {
+      "type": "StorageBucket",
+      "name": "assets-bucket",
+      "versioning": true
+    },
+    {
+      "type": "DatabaseInstance",
+      "name": "app-database",
+      "engine": "mysql",
+      "storageSize": 20
+    }
+  ]
+}
+

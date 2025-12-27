@@ -1,0 +1,187 @@
+classDiagram
+    class Infrastructure {
+        +String provider
+        +CloudResource[] resources
+    }
+    
+    class CloudResource {
+        <<abstract>>
+        +String id
+        +String name
+        +String region
+        +String[] tags
+    }
+    
+    class ComputeInstance {
+        +String os
+        +String keypair
+        +Subnet subnet
+        +Volume[] volumes
+        +SecurityGroup[] securityGroups
+    }
+    
+    class AutoScalingGroup {
+        +int minSize
+        +int maxSize
+        +int desiredCapacity
+        +ComputeInstance template
+        +ComputeInstance[] instances
+    }
+    
+    class ContainerService {
+        +String clusterName
+        +int numberOfContainers
+        +String image
+        +Subnet[] subnets
+        +SecurityGroup[] securityGroups
+    }
+    
+    class Function {
+        +String runtime
+        +String trigger
+        +IAMRole iamRole
+    }
+    
+    class Volume {
+        +int size
+        +boolean encrypted
+        +ComputeInstance attachedTo
+    }
+    
+    class StorageBucket {
+        +boolean versioning
+        +boolean publicAccess
+    }
+    
+    class FileSystem {
+        +String mountPoint
+        +int capacityGB
+        +boolean encrypted
+    }
+    
+    class DatabaseInstance {
+        +String engine
+        +String version
+        +int storageSize
+        +boolean multiAZ
+        +Subnet subnet
+        +SecurityGroup[] securityGroups
+    }
+    
+    class NoSQLDatabase {
+        +String engine
+        +int throughputCapacity
+        +int replicaCount
+    }
+    
+    class VPC {
+        +String cidrBlock
+        +Subnet[] subnets
+        +RouteTable[] routeTables
+    }
+    
+    class Subnet {
+        +String cidr
+        +String typeSubnet
+        +String availabilityZone
+        +VPC vpc
+        +RouteTable routeTable
+    }
+    
+    class RouteTable {
+        +String[] routes
+        +Subnet[] subnets
+    }
+    
+    class SecurityGroup {
+        +String[] inboundRules
+        +String[] outboundRules
+    }
+    
+    class LoadBalancer {
+        +String type
+        +AutoScalingGroup[] autoScalingGroups
+        +ComputeInstance[] instances
+        +Subnet[] subnets
+    }
+    
+    class NetworkInterface {
+        +String privateIP
+        +String publicIP
+        +Subnet subnet
+        +SecurityGroup[] securityGroups
+    }
+    
+    class IAMEntity {
+        <<abstract>>
+        +String entityType
+        +String[] actions
+        +String[] resources
+        +String assumeRolePolicy
+    }
+    
+    class IAMRole {
+        +String assumeRolePolicy
+        +IAMPolicy[] policies
+    }
+    
+    class IAMPolicy {
+        +String[] actions
+        +String[] resources
+    }
+    
+    class Secret {
+        +String key
+        +boolean encrypted
+    }
+    
+    class MonitoringService {
+        +String[] metrics
+        +String[] alerts
+        +CloudResource[] monitoredResources
+    }
+    
+    Infrastructure "1" *-- "*" CloudResource : contains
+    CloudResource <|-- ComputeInstance
+    CloudResource <|-- AutoScalingGroup
+    CloudResource <|-- ContainerService
+    CloudResource <|-- Function
+    CloudResource <|-- Volume
+    CloudResource <|-- StorageBucket
+    CloudResource <|-- FileSystem
+    CloudResource <|-- DatabaseInstance
+    CloudResource <|-- NoSQLDatabase
+    CloudResource <|-- VPC
+    CloudResource <|-- Subnet
+    CloudResource <|-- RouteTable
+    CloudResource <|-- SecurityGroup
+    CloudResource <|-- LoadBalancer
+    CloudResource <|-- NetworkInterface
+    CloudResource <|-- IAMEntity
+    CloudResource <|-- IAMRole
+    CloudResource <|-- IAMPolicy
+    CloudResource <|-- Secret
+    CloudResource <|-- MonitoringService
+    
+    ComputeInstance "1" --> "*" Subnet : uses
+    ComputeInstance "1..*" --> "*" SecurityGroup : requires
+    ComputeInstance "1" --> "*" Volume : has
+    Volume "1" --> "1" ComputeInstance : attachedTo
+    AutoScalingGroup "1" --> "1" ComputeInstance : template
+    AutoScalingGroup "1" --> "*" ComputeInstance : instances
+    DatabaseInstance "1" --> "1" Subnet : uses
+    DatabaseInstance "1..*" --> "*" SecurityGroup : requires
+    Subnet "1" --> "1" VPC : belongsTo
+    Subnet "1" --> "1" RouteTable : uses
+    VPC "1" *-- "*" Subnet : contains
+    VPC "1" *-- "*" RouteTable : contains
+    NetworkInterface "1" --> "1" Subnet : uses
+    NetworkInterface "1..*" --> "*" SecurityGroup : requires
+    Function "1" --> "0..1" IAMRole : uses
+    IAMRole "1" --> "*" IAMPolicy : has
+    ContainerService "1" --> "*" Subnet : uses
+    ContainerService "1..*" --> "*" SecurityGroup : requires
+    LoadBalancer "1" --> "*" Subnet : uses
+    LoadBalancer "1" --> "*" AutoScalingGroup : targets
+    LoadBalancer "1" --> "*" ComputeInstance : targets
+
