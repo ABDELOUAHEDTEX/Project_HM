@@ -1,8 +1,8 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
-Bundle-SymbolicName: cloudinfragen.metamodel;singleton:=true
-Automatic-Module-Name: cloudinfragen.metamodel
+Bundle-SymbolicName: cloudinfragen;singleton:=true
+Automatic-Module-Name: cloudinfragen
 Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
 Bundle-Vendor: %providerName
@@ -12,5 +12,9 @@ Export-Package: cloudinfragen,
  cloudinfragen.impl,
  cloudinfragen.util
 Require-Bundle: org.eclipse.core.runtime,
- org.eclipse.emf.ecore;visibility:=reexport
+ org.eclipse.emf.ecore;visibility:=reexport,
+ org.eclipse.emf.ecore.xmi;visibility:=reexport,
+ org.eclipse.emf.common;visibility:=reexport,
+ org.eclipse.emf.codegen;bundle-version="2.27.0",
+ org.eclipse.emf.codegen.ecore;bundle-version="2.43.0"
 Bundle-ActivationPolicy: lazy
