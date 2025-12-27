@@ -3,6 +3,8 @@
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="cloudinfragen" nsURI="http://www.cloudinfragen.com/metamodel"
     nsPrefix="cloudinfragen">
   <eClassifiers xsi:type="ecore:EClass" name="Infrastructure">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="provider" ordered="false"
+        unique="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="resources" ordered="false"
         upperBound="-1" eType="#//CloudResource" containment="true"/>
   </eClassifiers>
@@ -21,10 +23,12 @@
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="keypair" ordered="false"
         unique="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subnet" ordered="false"
+        unique="false" eType="#//Subnet" changeable="false"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="volumes" ordered="false"
         upperBound="-1" eType="#//Volume" changeable="false" eOpposite="#//Volume/attachedTo"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="securityGroups" ordered="false"
-        upperBound="-1" eType="#//SecurityGroup" changeable="false"/>
+        lowerBound="1" upperBound="-1" eType="#//SecurityGroup" changeable="false"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AutoScalingGroup" eSuperTypes="#//CloudResource">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="minSize" ordered="false"
@@ -35,6 +39,8 @@
         defaultValueLiteral="1"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="desiredCapacity" ordered="false"
         unique="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="template" ordered="false"
+        unique="false" lowerBound="1" eType="#//ComputeInstance"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="instances" ordered="false"
         upperBound="-1" eType="#//ComputeInstance" changeable="false"/>
   </eClassifiers>
@@ -75,6 +81,8 @@
   <eClassifiers xsi:type="ecore:EClass" name="Subnet" eSuperTypes="#//CloudResource">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="cidr" ordered="false" unique="false"
         lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="typeSubnet" ordered="false"
+        unique="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="availabilityZone" ordered="false"
         unique="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="vpc" ordered="false" unique="false"
@@ -114,9 +122,80 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="assumeRolePolicy" ordered="false"
         unique="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ContainerService" eSuperTypes="#//CloudResource">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="clusterName" ordered="false"
+        unique="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="numberOfContainers" ordered="false"
+        unique="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        defaultValueLiteral="1"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="image" ordered="false"
+        unique="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subnets" ordered="false"
+        upperBound="-1" eType="#//Subnet" changeable="false"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="securityGroups" ordered="false"
+        upperBound="-1" eType="#//SecurityGroup" changeable="false"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Function" eSuperTypes="#//CloudResource">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="runtime" ordered="false"
+        unique="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="trigger" ordered="false"
+        unique="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="iamRole" ordered="false"
+        unique="false" eType="#//IAMRole"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DatabaseInstance" eSuperTypes="#//CloudResource">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="engine" ordered="false"
+        unique="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="version" ordered="false"
+        unique="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="storageSize" ordered="false"
+        unique="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="multiAZ" ordered="false"
+        unique="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        defaultValueLiteral="false"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subnet" ordered="false"
+        unique="false" eType="#//Subnet" changeable="false"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="securityGroups" ordered="false"
+        upperBound="-1" eType="#//SecurityGroup" changeable="false"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NoSQLDatabase" eSuperTypes="#//CloudResource">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="engine" ordered="false"
+        unique="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="throughputCapacity" ordered="false"
+        unique="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="replicaCount" ordered="false"
+        unique="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NetworkInterface" eSuperTypes="#//CloudResource">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="privateIP" ordered="false"
+        unique="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="publicIP" ordered="false"
+        unique="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subnet" ordered="false"
+        unique="false" lowerBound="1" eType="#//Subnet" changeable="false"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="securityGroups" ordered="false"
+        upperBound="-1" eType="#//SecurityGroup" changeable="false"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IAMRole" eSuperTypes="#//CloudResource">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="assumeRolePolicy" ordered="false"
+        unique="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="policies" ordered="false"
+        upperBound="-1" eType="#//IAMPolicy" changeable="false"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IAMPolicy" eSuperTypes="#//CloudResource">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="actions" ordered="false"
+        unique="false" upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="resources" ordered="false"
+        unique="false" upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Secret" eSuperTypes="#//CloudResource">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="key" ordered="false" unique="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="encrypted" ordered="false"
+        unique="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        defaultValueLiteral="true"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MonitoringService" eSuperTypes="#//CloudResource">
-    <eOperations name="newOperation1"/>
-    <eOperations name="newOperation2"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="metrics" ordered="false"
         unique="false" upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="alerts" ordered="false"

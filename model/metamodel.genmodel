@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
-    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/cloudinfragen.metamodel/src" modelPluginID="cloudinfragen.metamodel"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/cloudinfragen/src" modelPluginID="cloudinfragen"
     modelName="Metamodel" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="17.0" copyrightFields="false"
     operationReflection="true" importOrganizing="true">
   <foreignModel>metamodel.ecore</foreignModel>
   <genPackages prefix="Cloudinfragen" disposableProviderFactory="true" ecorePackage="metamodel.ecore#/">
     <genClasses ecoreClass="metamodel.ecore#//Infrastructure">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodel.ecore#//Infrastructure/provider"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference metamodel.ecore#//Infrastructure/resources"/>
     </genClasses>
     <genClasses image="false" ecoreClass="metamodel.ecore#//CloudResource">
@@ -18,6 +19,7 @@
     <genClasses ecoreClass="metamodel.ecore#//ComputeInstance">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodel.ecore#//ComputeInstance/os"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodel.ecore#//ComputeInstance/keypair"/>
+      <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference metamodel.ecore#//ComputeInstance/subnet"/>
       <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference metamodel.ecore#//ComputeInstance/volumes"/>
       <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference metamodel.ecore#//ComputeInstance/securityGroups"/>
     </genClasses>
@@ -25,6 +27,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodel.ecore#//AutoScalingGroup/minSize"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodel.ecore#//AutoScalingGroup/maxSize"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodel.ecore#//AutoScalingGroup/desiredCapacity"/>
+      <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference metamodel.ecore#//AutoScalingGroup/template"/>
       <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference metamodel.ecore#//AutoScalingGroup/instances"/>
     </genClasses>
     <genClasses ecoreClass="metamodel.ecore#//Volume">
@@ -48,6 +51,7 @@
     </genClasses>
     <genClasses ecoreClass="metamodel.ecore#//Subnet">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodel.ecore#//Subnet/cidr"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodel.ecore#//Subnet/typeSubnet"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodel.ecore#//Subnet/availabilityZone"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference metamodel.ecore#//Subnet/vpc"/>
       <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference metamodel.ecore#//Subnet/routeTable"/>
@@ -72,12 +76,53 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodel.ecore#//IAMEntity/resources"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodel.ecore#//IAMEntity/assumeRolePolicy"/>
     </genClasses>
+    <genClasses ecoreClass="metamodel.ecore#//ContainerService">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodel.ecore#//ContainerService/clusterName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodel.ecore#//ContainerService/numberOfContainers"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodel.ecore#//ContainerService/image"/>
+      <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference metamodel.ecore#//ContainerService/subnets"/>
+      <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference metamodel.ecore#//ContainerService/securityGroups"/>
+    </genClasses>
+    <genClasses ecoreClass="metamodel.ecore#//Function">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodel.ecore#//Function/runtime"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodel.ecore#//Function/trigger"/>
+      <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference metamodel.ecore#//Function/iamRole"/>
+    </genClasses>
+    <genClasses ecoreClass="metamodel.ecore#//DatabaseInstance">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodel.ecore#//DatabaseInstance/engine"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodel.ecore#//DatabaseInstance/version"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodel.ecore#//DatabaseInstance/storageSize"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodel.ecore#//DatabaseInstance/multiAZ"/>
+      <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference metamodel.ecore#//DatabaseInstance/subnet"/>
+      <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference metamodel.ecore#//DatabaseInstance/securityGroups"/>
+    </genClasses>
+    <genClasses ecoreClass="metamodel.ecore#//NoSQLDatabase">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodel.ecore#//NoSQLDatabase/engine"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodel.ecore#//NoSQLDatabase/throughputCapacity"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodel.ecore#//NoSQLDatabase/replicaCount"/>
+    </genClasses>
+    <genClasses ecoreClass="metamodel.ecore#//NetworkInterface">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodel.ecore#//NetworkInterface/privateIP"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodel.ecore#//NetworkInterface/publicIP"/>
+      <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference metamodel.ecore#//NetworkInterface/subnet"/>
+      <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference metamodel.ecore#//NetworkInterface/securityGroups"/>
+    </genClasses>
+    <genClasses ecoreClass="metamodel.ecore#//IAMRole">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodel.ecore#//IAMRole/assumeRolePolicy"/>
+      <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference metamodel.ecore#//IAMRole/policies"/>
+    </genClasses>
+    <genClasses ecoreClass="metamodel.ecore#//IAMPolicy">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodel.ecore#//IAMPolicy/actions"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodel.ecore#//IAMPolicy/resources"/>
+    </genClasses>
+    <genClasses ecoreClass="metamodel.ecore#//Secret">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodel.ecore#//Secret/key"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodel.ecore#//Secret/encrypted"/>
+    </genClasses>
     <genClasses ecoreClass="metamodel.ecore#//MonitoringService">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodel.ecore#//MonitoringService/metrics"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodel.ecore#//MonitoringService/alerts"/>
       <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference metamodel.ecore#//MonitoringService/monitoredResources"/>
-      <genOperations ecoreOperation="metamodel.ecore#//MonitoringService/newOperation1"/>
-      <genOperations ecoreOperation="metamodel.ecore#//MonitoringService/newOperation2"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>
