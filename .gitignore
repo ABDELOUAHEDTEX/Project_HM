@@ -1,0 +1,28 @@
+# Eclipse
+bin/
+target/
+.settings/
+.classpath
+.project
+
+# Compiled
+*.class
+
+# Generated
+src-gen/
+output/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Maven
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+
